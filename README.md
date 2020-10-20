@@ -1,0 +1,1 @@
+# TriforkIdentityManager-Swift-Example

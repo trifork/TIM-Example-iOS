@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E96B86CC253EE710000E3CDA /* TriforkIdentityManager-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */; };
+		E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86CE253EF84A000E3CDA /* StorageView.swift */; };
+		E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86D3253F0040000E3CDA /* JWTDecoder.swift */; };
+		E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */; };
+		E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86E0253F1051000E3CDA /* LoginView.swift */; };
+		E986FD1D253ECED900C2E6EE /* AuthSFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986FD1C253ECED900C2E6EE /* AuthSFController.swift */; };
+		E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */; };
+		E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* ContentView.swift */; };
+		E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6B8253EC3E200612836 /* Assets.xcassets */; };
+		E9E9F6BC253EC3E200612836 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */; };
+		E9E9F6C7253EC4DF00612836 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E9E9F6C6253EC4DF00612836 /* AppAuth */; };
+		E9E9F6C9253EC4DF00612836 /* AppAuthCore in Frameworks */ = {isa = PBXBuildFile; productRef = E9E9F6C8253EC4DF00612836 /* AppAuthCore */; };
+		E9E9F6CC253EC72100612836 /* AppAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6CB253EC72100612836 /* AppAuthController.swift */; };
+		E9E9F6D4253EC7B000612836 /* OpenIDCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6D3253EC7B000612836 /* OpenIDCredentials.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E96B86CE253EF84A000E3CDA /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		E96B86D3253F0040000E3CDA /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
+		E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshLoginView.swift; sourceTree = "<group>"; };
+		E96B86E0253F1051000E3CDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E986FD1C253ECED900C2E6EE /* AuthSFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSFController.swift; sourceTree = "<group>"; };
+		E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TriforkIdentityManager-Swift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforkIdentityManager_Swift_ExampleApp.swift; sourceTree = "<group>"; };
+		E9E9F6B6253EC3E000612836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E9E9F6B8253EC3E200612836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9E9F6BD253EC3E200612836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9E9F6CB253EC72100612836 /* AppAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuthController.swift; sourceTree = "<group>"; };
+		E9E9F6D3253EC7B000612836 /* OpenIDCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenIDCredentials.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9E9F6AE253EC3E000612836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96B86CC253EE710000E3CDA /* TriforkIdentityManager-Swift in Frameworks */,
+				E9E9F6C7253EC4DF00612836 /* AppAuth in Frameworks */,
+				E9E9F6C9253EC4DF00612836 /* AppAuthCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E96B86D2253F0037000E3CDA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E96B86D3253F0040000E3CDA /* JWTDecoder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E9E9F6A8253EC3E000612836 = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6B3253EC3E000612836 /* TriforkIdentityManager-Swift-Example */,
+				E9E9F6B2253EC3E000612836 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9E9F6B2253EC3E000612836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9E9F6B3253EC3E000612836 /* TriforkIdentityManager-Swift-Example */ = {
+			isa = PBXGroup;
+			children = (
+				E96B86D2253F0037000E3CDA /* Helpers */,
+				E9E9F6CF253EC76000612836 /* App */,
+				E9E9F6CE253EC74D00612836 /* Controllers */,
+				E9E9F6D2253EC79F00612836 /* Models */,
+				E9E9F6BA253EC3E200612836 /* Preview Content */,
+				E9E9F6D1253EC76E00612836 /* Resources */,
+				E9E9F6D0253EC76800612836 /* Views */,
+			);
+			path = "TriforkIdentityManager-Swift-Example";
+			sourceTree = "<group>";
+		};
+		E9E9F6BA253EC3E200612836 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9E9F6CE253EC74D00612836 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6CB253EC72100612836 /* AppAuthController.swift */,
+				E986FD1C253ECED900C2E6EE /* AuthSFController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E9E9F6CF253EC76000612836 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E9E9F6D0253EC76800612836 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6B6253EC3E000612836 /* ContentView.swift */,
+				E96B86CE253EF84A000E3CDA /* StorageView.swift */,
+				E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */,
+				E96B86E0253F1051000E3CDA /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9E9F6D1253EC76E00612836 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6B8253EC3E200612836 /* Assets.xcassets */,
+				E9E9F6BD253EC3E200612836 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9E9F6D2253EC79F00612836 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6D3253EC7B000612836 /* OpenIDCredentials.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9E9F6B0253EC3E000612836 /* TriforkIdentityManager-Swift-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TriforkIdentityManager-Swift-Example" */;
+			buildPhases = (
+				E9E9F6AD253EC3E000612836 /* Sources */,
+				E9E9F6AE253EC3E000612836 /* Frameworks */,
+				E9E9F6AF253EC3E000612836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TriforkIdentityManager-Swift-Example";
+			packageProductDependencies = (
+				E9E9F6C6253EC4DF00612836 /* AppAuth */,
+				E9E9F6C8253EC4DF00612836 /* AppAuthCore */,
+				E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */,
+			);
+			productName = "TriforkIdentityManager-Swift-Example";
+			productReference = E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9E9F6A9253EC3E000612836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					E9E9F6B0253EC3E000612836 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TriforkIdentityManager-Swift-Example" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9E9F6A8253EC3E000612836;
+			packageReferences = (
+				E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+				E96B86CA253EE710000E3CDA /* XCRemoteSwiftPackageReference "TriforkIdentityManager-Swift" */,
+			);
+			productRefGroup = E9E9F6B2253EC3E000612836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9E9F6B0253EC3E000612836 /* TriforkIdentityManager-Swift-Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9E9F6AF253EC3E000612836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9E9F6BC253EC3E200612836 /* Preview Assets.xcassets in Resources */,
+				E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9E9F6AD253EC3E000612836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */,
+				E986FD1D253ECED900C2E6EE /* AuthSFController.swift in Sources */,
+				E9E9F6CC253EC72100612836 /* AppAuthController.swift in Sources */,
+				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,
+				E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */,
+				E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */,
+				E9E9F6D4253EC7B000612836 /* OpenIDCredentials.swift in Sources */,
+				E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */,
+				E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E9E9F6BE253EC3E200612836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E9E9F6BF253EC3E200612836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9E9F6C1253EC3E200612836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TriforkIdentityManager-Swift-Example/Preview Content\"";
+				DEVELOPMENT_TEAM = ZZGMPFLA2F;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TriforkIdentityManager-Swift-Example/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trifork.TriforkIdentityManager-Swift-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9E9F6C2253EC3E200612836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TriforkIdentityManager-Swift-Example/Preview Content\"";
+				DEVELOPMENT_TEAM = ZZGMPFLA2F;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TriforkIdentityManager-Swift-Example/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trifork.TriforkIdentityManager-Swift-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TriforkIdentityManager-Swift-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9E9F6BE253EC3E200612836 /* Debug */,
+				E9E9F6BF253EC3E200612836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TriforkIdentityManager-Swift-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9E9F6C1253EC3E200612836 /* Debug */,
+				E9E9F6C2253EC3E200612836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E96B86CA253EE710000E3CDA /* XCRemoteSwiftPackageReference "TriforkIdentityManager-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tkctrifork/TriforkIdentityManager-Swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/openid/AppAuth-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96B86CA253EE710000E3CDA /* XCRemoteSwiftPackageReference "TriforkIdentityManager-Swift" */;
+			productName = "TriforkIdentityManager-Swift";
+		};
+		E9E9F6C6253EC4DF00612836 /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
+		E9E9F6C8253EC4DF00612836 /* AppAuthCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuthCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E9E9F6A9253EC3E000612836 /* Project object */;
+}

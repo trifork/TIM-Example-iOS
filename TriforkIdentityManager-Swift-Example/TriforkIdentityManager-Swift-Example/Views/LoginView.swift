@@ -1,5 +1,6 @@
 import SwiftUI
 import TriforkIdentityManager_Swift
+import os.log
 
 struct LoginView: View {
     @State private var hasStoredPasswordWithBioID: Bool = false
@@ -14,13 +15,27 @@ struct LoginView: View {
             }
             Button("Login with password") {
                 statusText = "..."
-                loginWithPassword(password)
+                TIMHelper.loginWithPassword(password) { (res: Result<JWT, Error>) in
+                    switch res {
+                    case .success(let accessToken):
+                        statusText = "Received AT:\n\(accessToken)"
+                    case .failure(let error):
+                        statusText = "Failed to retrieve AT.\n\(error.localizedDescription)"
+                    }
+                }
             }
             .disabled(password.isEmpty)
             Text("... or ...").bold()
             Button("Login with TouchID/FaceID") {
                 statusText = "..."
-                loginWithBiometricId()
+                TIMHelper.loginWithBiometricId { (res: Result<JWT, Error>) in
+                    switch res {
+                    case .success(let accessToken):
+                        statusText = "Received AT:\n\(accessToken)"
+                    case .failure(let error):
+                        statusText = "Failed to retrieve AT.\n\(error.localizedDescription)"
+                    }
+                }
             }
             .disabled(!hasStoredPasswordWithBioID)
             ScrollView {
@@ -34,52 +49,6 @@ struct LoginView: View {
             hasStoredPasswordWithBioID = TIMStorage.shared.havePasswordStored()
         })
         .navigationBarTitle("Login")
-    }
-
-    func loginWithPassword(_ password: String) {
-        guard let keyIdData = TIMStorage.shared.retrieveKeyId() else {
-            statusText = "Failed to get key ID from storage."
-            return
-        }
-        let keyId = String(decoding: keyIdData, as: UTF8.self)
-        TIMKeyServer.shared.getKey(password: password, keyId: keyId) { (keyModel: KeyModel) in
-            guard let refreshTokenData = TIMStorage.shared.retrieveRefreshToken(keyModel: keyModel) else {
-                statusText = "Failed to load refresh token."
-                return
-            }
-            let refreshToken = String(decoding: refreshTokenData, as: UTF8.self)
-            AppAuthController.shared.silentLogin(refreshToken: refreshToken) { (accessToken: String?, error: Error?) in
-                if let accessToken = accessToken,
-                   let newRefreshToken = AppAuthController.shared.refreshToken(),
-                   let expireDate = (JWTDecoder.decode(jwtToken: newRefreshToken)["exp"] as? TimeInterval)
-                {
-                    statusText = "Received access token!\n\n\(accessToken)"
-                    let didStore = TIMStorage.shared.storeRefreshTokenAndKeyId(
-                        refreshToken: newRefreshToken,
-                        expireTime: expireDate,
-                        keyModel: keyModel
-                    )
-                    if didStore {
-                        statusText += "\nDid store new refresh token."
-                    } else {
-                        statusText += "\nFailed to store new refresh token."
-                    }
-                } else {
-                    statusText = "Failed to get access token: \(error?.localizedDescription ?? "No error")"
-                }
-            }
-        } onError: { (error: KeyServerError) in
-            statusText = "Failed to get key from key server: \(error.localizedDescription)"
-        }
-    }
-
-    func loginWithBiometricId() {
-        guard let passwordData = TIMStorage.shared.retrievePasswordViaBiometric() else {
-            statusText = "Failed to get password from storage."
-            return
-        }
-        let password = String(decoding: passwordData, as: UTF8.self)
-        loginWithPassword(password)
     }
 }
 

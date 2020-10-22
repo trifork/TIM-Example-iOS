@@ -107,7 +107,7 @@ final class AppAuthController {
     }
 
     func login(presentingViewController: UIViewController,
-                completion: @escaping (String?, Error?) -> Void,
+                completion: @escaping (JWT?, Error?) -> Void,
                 didCancel: (() -> Void)? = nil,
                 willPresentSafariViewController: ((SFSafariViewController) -> Void)? = nil,
                 shouldAnimate: (() -> Bool)? = nil) {
@@ -138,7 +138,7 @@ final class AppAuthController {
         }
     }
 
-    func silentLogin(refreshToken: String, completion: @escaping (String?, Error?) -> Void) {
+    func silentLogin(refreshToken: String, completion: @escaping (JWT?, Error?) -> Void) {
         discoverConfiguration { [weak self] (configuration: OIDServiceConfiguration, error: Error?) in
             guard let `self` = self else {
                 return
@@ -170,7 +170,7 @@ final class AppAuthController {
         }
     }
 
-    func accessToken(forceRefresh: Bool = false, _ completion: @escaping (String?, Error?) -> Void) {
+    func accessToken(forceRefresh: Bool = false, _ completion: @escaping (JWT?, Error?) -> Void) {
         guard let authState = self.authState else {
             completion(nil, AuthControlleError.authStateNil)
             return
@@ -183,7 +183,7 @@ final class AppAuthController {
         }
     }
 
-    func refreshToken() -> String? {
+    func refreshToken() -> JWT? {
         authState?.refreshToken
     }
 

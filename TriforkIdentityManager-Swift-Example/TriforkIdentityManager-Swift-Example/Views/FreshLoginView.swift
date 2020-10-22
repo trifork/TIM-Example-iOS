@@ -10,16 +10,20 @@ import SwiftUI
 struct FreshLoginView: View {
     @State private var statusText: String?
 
+    private var topViewController: UIViewController {
+        UIApplication.shared.windows.first!.rootViewController!
+    }
+
     var body: some View {
         VStack(spacing: 30) {
             Button("Tap to begin login") {
-                AppAuthController.shared.login(
-                    presentingViewController: UIApplication.shared.windows.first!.rootViewController!) { (accessToken: String?, error: Error?) in
-
-                    if let at = accessToken, let rt = AppAuthController.shared.refreshToken() {
-                        statusText = "Received access token and refresh token.\nAT:\n\(at)\n\nRT:\n\(rt)"
-                    } else {
-                        statusText = "Failed.\n\(error?.localizedDescription ?? "No error")"
+                statusText = "..."
+                TIMHelper.performOpenIDConnectLogin(presentingViewController: topViewController) { (res: Result<JWT, Error>) in
+                    switch res {
+                    case .success(let accessToken):
+                        statusText = "Received access token and refresh token.\nAT:\n\(accessToken)"
+                    case .failure(let error):
+                        statusText = "Failed.\n\(error.localizedDescription)"
                     }
                 }
             }

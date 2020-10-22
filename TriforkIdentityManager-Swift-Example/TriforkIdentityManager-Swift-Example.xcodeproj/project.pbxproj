@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E932164B25406D960028EC8B /* TIMHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E932164A25406D960028EC8B /* TIMHelper.swift */; };
 		E96B86CC253EE710000E3CDA /* TriforkIdentityManager-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */; };
 		E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86CE253EF84A000E3CDA /* StorageView.swift */; };
 		E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86D3253F0040000E3CDA /* JWTDecoder.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E932164A25406D960028EC8B /* TIMHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIMHelper.swift; sourceTree = "<group>"; };
 		E96B86CE253EF84A000E3CDA /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
 		E96B86D3253F0040000E3CDA /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
 		E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshLoginView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				E9E9F6CB253EC72100612836 /* AppAuthController.swift */,
 				E986FD1C253ECED900C2E6EE /* AuthSFController.swift */,
+				E932164A25406D960028EC8B /* TIMHelper.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				E986FD1D253ECED900C2E6EE /* AuthSFController.swift in Sources */,
 				E9E9F6CC253EC72100612836 /* AppAuthController.swift in Sources */,
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,
+				E932164B25406D960028EC8B /* TIMHelper.swift in Sources */,
 				E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */,
 				E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */,
 				E9E9F6D4253EC7B000612836 /* OpenIDCredentials.swift in Sources */,

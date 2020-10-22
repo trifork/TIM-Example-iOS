@@ -1,6 +1,6 @@
 import SwiftUI
+import TIM
 import AppAuth
-import TriforkIdentityManager_Swift
 
 @main
 struct TIMExampleiOSApp: App {
@@ -14,13 +14,11 @@ struct TIMExampleiOSApp: App {
                         redirectUri: URL(string: "test:/")!,
                         scopes: [OIDScopeOpenID, OIDScopeProfile]
                     )
-                    AppAuthController.shared.configure(creds)
-
                     let keyServerAddress = "https://oidc-test.hosted.trifork.com/auth/realms/dev/keyservice/v1/"
-                    TIMKeyServer.shared.configure(serverAddress: keyServerAddress)
+                    TIM.configure(openIDCredentials: creds, keyServerAddress: keyServerAddress)
                 })
                 .onOpenURL(perform: { url in
-                    AppAuthController.shared.handleRedirect(url: url)
+                    TIM.auth.handleRedirect(url: url)
                 })
         }
     }

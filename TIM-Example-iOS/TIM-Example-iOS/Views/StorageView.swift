@@ -1,5 +1,5 @@
 import SwiftUI
-import TriforkIdentityManager_Swift
+import TIM
 import os.log
 import LocalAuthentication
 
@@ -18,7 +18,7 @@ struct StorageView: View {
                 .disabled(!deviceSupportsBiometricID())
             Button("Save data") {
                 statusText = ""
-                TIMHelper.storeRefreshTokenWithPassword(password) { (res: Result<Void, Error>) in
+                TIM.storage.storeRefreshTokenWithPassword(password) { (res: Result<Void, Error>) in
                     switch res {
                     case .success:
                         statusText += "\nStored refresh token."
@@ -28,7 +28,7 @@ struct StorageView: View {
                 }
 
                 if shouldSaveWithBiometric {
-                    TIMHelper.storePasswordWithBiometricId(password) { (res: Result<Void, Error>) in
+                    TIM.storage.storePasswordWithBiometricId(password) { (res: Result<Void, Error>) in
                         switch res {
                         case .success:
                             statusText += "\nStored refresh token."
@@ -37,7 +37,7 @@ struct StorageView: View {
                         }
                     }
                 } else {
-                    TIMHelper.removePasswordStoredViaBiometric()
+                    TIM.storage.removePasswordStoredViaBiometric()
                 }
             }
             .disabled(password.isEmpty)

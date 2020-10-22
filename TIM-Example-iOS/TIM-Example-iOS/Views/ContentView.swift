@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-import TriforkIdentityManager_Swift
-import os.log
+import TIM
 
 struct ContentView: View {
     @State private var hasRefreshToken: Bool = false
@@ -22,10 +21,9 @@ struct ContentView: View {
                 NavigationLink("🔑 Login", destination: LoginView())
                     .disabled(!hasStoredRefreshToken)
                 Button("🗑 Reset everything") {
-                    TIMStorage.shared.clear()
-                    AppAuthController.shared.logout()
+                    TIM.storage.clear()
+                    TIM.auth.logout()
                     updateDataState()
-                    os_log("Cleared all data")
                 }
             }
             .multilineTextAlignment(.center)
@@ -38,8 +36,8 @@ struct ContentView: View {
     }
 
     func updateDataState() {
-        hasRefreshToken = AppAuthController.shared.refreshToken() != nil
-        hasStoredRefreshToken = TIMStorage.shared.haveRefreshAndKeyId()
+        hasRefreshToken = TIM.auth.refreshToken != nil
+        hasStoredRefreshToken = TIM.storage.hasStoredRefreshToken
     }
 }
 

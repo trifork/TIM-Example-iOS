@@ -11,11 +11,20 @@
         }
       },
       {
-        "package": "TIMEncryptedStorage",
-        "repositoryURL": "https://github.com/tkctrifork/TriforkIdentityManager-Swift",
+        "package": "TIM",
+        "repositoryURL": "https://github.com/tkctrifork/TIM-iOS.git",
         "state": {
           "branch": "main",
-          "revision": "1311d6c9f4fbe180e7e7ce16004502d5c0b27b47",
+          "revision": "e653b6ed279e65d92e17ec44c34141d9bf56eb76",
+          "version": null
+        }
+      },
+      {
+        "package": "TIMEncryptedStorage",
+        "repositoryURL": "https://github.com/tkctrifork/TIMEncryptedStorage-iOS",
+        "state": {
+          "branch": "main",
+          "revision": "de895c3daa87b2734d554dd7a79c00be54cb90b6",
           "version": null
         }
       }

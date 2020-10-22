@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TIM
 
 struct FreshLoginView: View {
     @State private var statusText: String?
@@ -18,7 +19,7 @@ struct FreshLoginView: View {
         VStack(spacing: 30) {
             Button("Tap to begin login") {
                 statusText = "..."
-                TIMHelper.performOpenIDConnectLogin(presentingViewController: topViewController) { (res: Result<JWT, Error>) in
+                TIM.auth.performOpenIDConnectLogin(presentingViewController: topViewController) { (res: Result<JWT, Error>) in
                     switch res {
                     case .success(let accessToken):
                         statusText = "Received access token and refresh token.\nAT:\n\(accessToken)"

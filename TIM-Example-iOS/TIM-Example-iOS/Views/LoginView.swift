@@ -1,5 +1,5 @@
 import SwiftUI
-import TriforkIdentityManager_Swift
+import TIM
 import os.log
 
 struct LoginView: View {
@@ -15,7 +15,7 @@ struct LoginView: View {
             }
             Button("Login with password") {
                 statusText = "..."
-                TIMHelper.loginWithPassword(password) { (res: Result<JWT, Error>) in
+                TIM.auth.loginWithPassword(password, storeNewRefreshToken: true) { (res: Result<JWT, Error>) in
                     switch res {
                     case .success(let accessToken):
                         statusText = "Received AT:\n\(accessToken)"
@@ -28,7 +28,7 @@ struct LoginView: View {
             Text("... or ...").bold()
             Button("Login with TouchID/FaceID") {
                 statusText = "..."
-                TIMHelper.loginWithBiometricId { (res: Result<JWT, Error>) in
+                TIM.auth.loginWithBiometricId { (res: Result<JWT, Error>) in
                     switch res {
                     case .success(let accessToken):
                         statusText = "Received AT:\n\(accessToken)"
@@ -46,7 +46,7 @@ struct LoginView: View {
         }
         .padding()
         .onAppear(perform: {
-            hasStoredPasswordWithBioID = TIMStorage.shared.havePasswordStored()
+            hasStoredPasswordWithBioID = TIM.storage.hasStoredPassword
         })
         .navigationBarTitle("Login")
     }

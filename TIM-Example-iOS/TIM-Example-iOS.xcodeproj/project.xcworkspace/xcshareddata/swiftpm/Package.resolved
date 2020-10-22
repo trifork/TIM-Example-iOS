@@ -11,7 +11,7 @@
         }
       },
       {
-        "package": "TriforkIdentityManager-Swift",
+        "package": "TIMEncryptedStorage",
         "repositoryURL": "https://github.com/tkctrifork/TriforkIdentityManager-Swift",
         "state": {
           "branch": "main",

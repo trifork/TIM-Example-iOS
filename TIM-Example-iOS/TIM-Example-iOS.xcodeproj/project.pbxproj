@@ -14,7 +14,7 @@
 		E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */; };
 		E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86E0253F1051000E3CDA /* LoginView.swift */; };
 		E986FD1D253ECED900C2E6EE /* AuthSFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986FD1C253ECED900C2E6EE /* AuthSFController.swift */; };
-		E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */; };
+		E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */; };
 		E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* ContentView.swift */; };
 		E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6B8253EC3E200612836 /* Assets.xcassets */; };
 		E9E9F6BC253EC3E200612836 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */; };
@@ -31,8 +31,8 @@
 		E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshLoginView.swift; sourceTree = "<group>"; };
 		E96B86E0253F1051000E3CDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E986FD1C253ECED900C2E6EE /* AuthSFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSFController.swift; sourceTree = "<group>"; };
-		E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TriforkIdentityManager-Swift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforkIdentityManager_Swift_ExampleApp.swift; sourceTree = "<group>"; };
+		E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIM-Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TIM-Example-App.swift"; sourceTree = "<group>"; };
 		E9E9F6B6253EC3E000612836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9E9F6B8253EC3E200612836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		E9E9F6A8253EC3E000612836 = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B3253EC3E000612836 /* TriforkIdentityManager-Swift-Example */,
+				E9E9F6B3253EC3E000612836 /* TIM-Example-iOS */,
 				E9E9F6B2253EC3E000612836 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,12 +74,12 @@
 		E9E9F6B2253EC3E000612836 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */,
+				E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9E9F6B3253EC3E000612836 /* TriforkIdentityManager-Swift-Example */ = {
+		E9E9F6B3253EC3E000612836 /* TIM-Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				E96B86D2253F0037000E3CDA /* Helpers */,
@@ -90,7 +90,7 @@
 				E9E9F6D1253EC76E00612836 /* Resources */,
 				E9E9F6D0253EC76800612836 /* Views */,
 			);
-			path = "TriforkIdentityManager-Swift-Example";
+			path = "TIM-Example-iOS";
 			sourceTree = "<group>";
 		};
 		E9E9F6BA253EC3E200612836 /* Preview Content */ = {
@@ -114,7 +114,7 @@
 		E9E9F6CF253EC76000612836 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */,
+				E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -150,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9E9F6B0253EC3E000612836 /* TriforkIdentityManager-Swift-Example */ = {
+		E9E9F6B0253EC3E000612836 /* TIM-Example-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TriforkIdentityManager-Swift-Example" */;
+			buildConfigurationList = E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TIM-Example-iOS" */;
 			buildPhases = (
 				E9E9F6AD253EC3E000612836 /* Sources */,
 				E9E9F6AE253EC3E000612836 /* Frameworks */,
@@ -162,14 +162,14 @@
 			);
 			dependencies = (
 			);
-			name = "TriforkIdentityManager-Swift-Example";
+			name = "TIM-Example-iOS";
 			packageProductDependencies = (
 				E9E9F6C6253EC4DF00612836 /* AppAuth */,
 				E9E9F6C8253EC4DF00612836 /* AppAuthCore */,
 				E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */,
 			);
 			productName = "TriforkIdentityManager-Swift-Example";
-			productReference = E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */;
+			productReference = E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TriforkIdentityManager-Swift-Example" */;
+			buildConfigurationList = E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TIM-Example-iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -203,7 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9E9F6B0253EC3E000612836 /* TriforkIdentityManager-Swift-Example */,
+				E9E9F6B0253EC3E000612836 /* TIM-Example-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -231,7 +231,7 @@
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,
 				E932164B25406D960028EC8B /* TIMHelper.swift in Sources */,
 				E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */,
-				E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */,
+				E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */,
 				E9E9F6D4253EC7B000612836 /* OpenIDCredentials.swift in Sources */,
 				E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */,
 				E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */,
@@ -404,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TriforkIdentityManager-Swift-Example" */ = {
+		E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TIM-Example-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9E9F6BE253EC3E200612836 /* Debug */,
@@ -413,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TriforkIdentityManager-Swift-Example" */ = {
+		E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TIM-Example-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9E9F6C1253EC3E200612836 /* Debug */,

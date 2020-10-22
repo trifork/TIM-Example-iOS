@@ -3,7 +3,7 @@ import AppAuth
 import TriforkIdentityManager_Swift
 
 @main
-struct TriforkIdentityManager_Swift_ExampleApp: App {
+struct TIMExampleiOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

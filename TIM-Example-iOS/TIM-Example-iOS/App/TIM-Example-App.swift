@@ -1,5 +1,6 @@
 import SwiftUI
 import TIM
+import TIMEncryptedStorage
 import AppAuth
 
 @main
@@ -14,8 +15,12 @@ struct TIMExampleiOSApp: App {
                         redirectUri: URL(string: "test:/")!,
                         scopes: [OIDScopeOpenID, OIDScopeProfile]
                     )
-                    let keyServerAddress = "https://oidc-test.hosted.trifork.com/auth/realms/dev/keyservice/v1/"
-                    TIM.configure(openIDCredentials: creds, keyServerAddress: keyServerAddress)
+                    let keyServiceUrl = "https://oidc-test.hosted.trifork.com/auth/realms/dev"
+                    let keyServiceConfig = TIMKeyServiceConfiguration(
+                        realmBaseUrl: keyServiceUrl,
+                        version: .v1
+                    )
+                    TIM.configure(openIDCredentials: creds, keyServiceConfiguration: keyServiceConfig)
                 })
                 .onOpenURL(perform: { url in
                     TIM.auth.handleRedirect(url: url)

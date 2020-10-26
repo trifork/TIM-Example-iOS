@@ -12,6 +12,8 @@
 		E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86D3253F0040000E3CDA /* JWTDecoder.swift */; };
 		E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */; };
 		E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86E0253F1051000E3CDA /* LoginView.swift */; };
+		E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */; };
+		E99F699125471C3000DC6D51 /* BiometricLoginSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */; };
 		E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */; };
 		E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* ContentView.swift */; };
 		E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6B8253EC3E200612836 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		E96B86D3253F0040000E3CDA /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
 		E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshLoginView.swift; sourceTree = "<group>"; };
 		E96B86E0253F1051000E3CDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinCodeView.swift; sourceTree = "<group>"; };
+		E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginSettingView.swift; sourceTree = "<group>"; };
 		E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIM-Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TIM-Example-App.swift"; sourceTree = "<group>"; };
 		E9E9F6B6253EC3E000612836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				E96B86CE253EF84A000E3CDA /* StorageView.swift */,
 				E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */,
 				E96B86E0253F1051000E3CDA /* LoginView.swift */,
+				E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */,
+				E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,7 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */,
+				E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */,
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,
+				E99F699125471C3000DC6D51 /* BiometricLoginSettingView.swift in Sources */,
 				E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */,
 				E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */,
 				E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */,

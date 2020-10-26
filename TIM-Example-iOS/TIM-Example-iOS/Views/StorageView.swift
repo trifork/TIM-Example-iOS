@@ -18,26 +18,26 @@ struct StorageView: View {
                 .disabled(!deviceSupportsBiometricID())
             Button("Save data") {
                 statusText = ""
-                TIM.storage.storeRefreshTokenWithPassword(password) { (res: Result<Void, Error>) in
-                    switch res {
-                    case .success:
-                        statusText += "\nStored refresh token."
-                    case .failure(let error):
-                        statusText += "\nFailed to store refresh token: \(error.localizedDescription)"
-                    }
-                }
+//                TIM.storage.storeRefreshTokenWithPassword(password) { (res: Result<Void, Error>) in
+//                    switch res {
+//                    case .success:
+//                        statusText += "\nStored refresh token."
+//                    case .failure(let error):
+//                        statusText += "\nFailed to store refresh token: \(error.localizedDescription)"
+//                    }
+//                }
 
                 if shouldSaveWithBiometric {
-                    TIM.storage.storePasswordWithBiometricId(password) { (res: Result<Void, Error>) in
-                        switch res {
-                        case .success:
-                            statusText += "\nStored refresh token."
-                        case .failure(let error):
-                            statusText += "\nFailed to store refresh token: \(error.localizedDescription)"
-                        }
-                    }
+//                    TIM.storage.storePasswordWithBiometricId(password) { (res: Result<Void, Error>) in
+//                        switch res {
+//                        case .success:
+//                            statusText += "\nStored refresh token."
+//                        case .failure(let error):
+//                            statusText += "\nFailed to store refresh token: \(error.localizedDescription)"
+//                        }
+//                    }
                 } else {
-                    TIM.storage.removePasswordStoredViaBiometric()
+//                    TIM.storage.removePasswordStoredViaBiometric()
                 }
             }
             .disabled(password.isEmpty)

@@ -9,44 +9,61 @@ import SwiftUI
 import TIM
 
 struct CreateNewPinCodeView: View {
+    @EnvironmentObject var navigationViewRoot: NavigationViewRoot
+
     @State var presentLogin: Bool = false
     @State var pinCode: String = ""
+    @State var name: String = ""
     @State var userId: String?
 
     var body: some View {
-        VStack {
-            Text("Type in a new PIN for your refresh token.")
-            SecureField("New PIN", text: $pinCode)
-                .keyboardType(.numberPad)
-                .multilineTextAlignment(.center)
-                .padding()
-            NavigationLink(
-                destination: BiometricLoginSettingView(userId: userId ?? "", password: pinCode),
-                isActive: $presentLogin,
-                label: {
+            Form {
+                Section(header: Text("Name")) {
+                    Text("Type in name for user")
+                    TextField("Name", text: $name)
+                        .padding([.top, .bottom])
+                }
+                Section(header: Text("Create PIN")) {
+                    Text("Type in a new PIN (at least 4 numbers)")
+                    SecureField("New PIN", text: $pinCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .padding([.top, .bottom])
+                }
+                Section {
                     Button("Save") {
-                        guard let rt = TIM.auth.refreshToken else {
+                        guard let rt = TIM.auth.refreshToken, let userId = rt.userId else {
                             return
                         }
-                        userId = rt.userId
+                        self.userId = userId
+                        UserSettings.save(name: name, for: userId)
                         TIM.storage.storeRefreshToken(rt, withNewPassword: pinCode) { (result) in
                             switch result {
                             case .success(let keyId):
                                 print("Saved refresh token for keyId: \(keyId)")
                                 DispatchQueue.main.async {
-                                    presentLogin = userId?.isEmpty == false
+                                    presentLogin = !userId.isEmpty
                                 }
                             case .failure(let error):
                                 print("Failed to store refresh token: \(error.localizedDescription)")
                             }
                         }
                     }
-                })
-                .opacity(pinCode.isEmpty ? 0 : 1)
-                .padding()
+                    .disabled(pinCode.count < 4 || name.isEmpty)
+                    .padding()
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                }
+            }
+        NavigationLink(
+            destination: BiometricLoginSettingView(
+                userId: userId ?? "",
+                password: pinCode
+            ),
+            isActive: $presentLogin) {
+            EmptyView()
         }
-        .padding()
-        .navigationTitle(TIM.auth.refreshToken?.userId ?? "N/A")
+        .hidden()
+        .navigationTitle("New user")
     }
 }
 

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90CF8D32547FE490087CDC0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8D22547FE490087CDC0 /* UserSettings.swift */; };
+		E90CF8D7254800BE0087CDC0 /* LABiometricType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */; };
+		E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */; };
+		E90CF8E325481CB40087CDC0 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */; };
+		E90CF8E825481E000087CDC0 /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8E725481E000087CDC0 /* TokenView.swift */; };
 		E92C6A992541AF0F00B46B87 /* TIM in Frameworks */ = {isa = PBXBuildFile; productRef = E92C6A982541AF0F00B46B87 /* TIM */; };
-		E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86CE253EF84A000E3CDA /* StorageView.swift */; };
 		E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86D3253F0040000E3CDA /* JWTDecoder.swift */; };
-		E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */; };
 		E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86E0253F1051000E3CDA /* LoginView.swift */; };
 		E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */; };
 		E99F699125471C3000DC6D51 /* BiometricLoginSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */; };
@@ -21,9 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E96B86CE253EF84A000E3CDA /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		E90CF8D22547FE490087CDC0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LABiometricType+Extensions.swift"; sourceTree = "<group>"; };
+		E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewRoot.swift; sourceTree = "<group>"; };
+		E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		E90CF8E725481E000087CDC0 /* TokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenView.swift; sourceTree = "<group>"; };
 		E96B86D3253F0040000E3CDA /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
-		E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshLoginView.swift; sourceTree = "<group>"; };
 		E96B86E0253F1051000E3CDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinCodeView.swift; sourceTree = "<group>"; };
 		E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginSettingView.swift; sourceTree = "<group>"; };
@@ -47,10 +53,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90CF8D5254800AB0087CDC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E90CF8DC254818AD0087CDC0 /* EnvironmentObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */,
+			);
+			path = EnvironmentObjects;
+			sourceTree = "<group>";
+		};
+		E90CF8E125481C9D0087CDC0 /* AuthenticatedView */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */,
+			);
+			path = AuthenticatedView;
+			sourceTree = "<group>";
+		};
+		E90CF8E625481DF60087CDC0 /* TokenView */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8E725481E000087CDC0 /* TokenView.swift */,
+			);
+			path = TokenView;
+			sourceTree = "<group>";
+		};
 		E96B86D2253F0037000E3CDA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				E96B86D3253F0040000E3CDA /* JWTDecoder.swift */,
+				E90CF8D22547FE490087CDC0 /* UserSettings.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -74,8 +113,10 @@
 		E9E9F6B3253EC3E000612836 /* TIM-Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E96B86D2253F0037000E3CDA /* Helpers */,
 				E9E9F6CF253EC76000612836 /* App */,
+				E90CF8DC254818AD0087CDC0 /* EnvironmentObjects */,
+				E90CF8D5254800AB0087CDC0 /* Extensions */,
+				E96B86D2253F0037000E3CDA /* Helpers */,
 				E9E9F6BA253EC3E200612836 /* Preview Content */,
 				E9E9F6D1253EC76E00612836 /* Resources */,
 				E9E9F6D0253EC76800612836 /* Views */,
@@ -102,9 +143,9 @@
 		E9E9F6D0253EC76800612836 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E90CF8E625481DF60087CDC0 /* TokenView */,
+				E90CF8E125481C9D0087CDC0 /* AuthenticatedView */,
 				E9E9F6B6253EC3E000612836 /* ContentView.swift */,
-				E96B86CE253EF84A000E3CDA /* StorageView.swift */,
-				E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */,
 				E96B86E0253F1051000E3CDA /* LoginView.swift */,
 				E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */,
 				E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */,
@@ -196,13 +237,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90CF8E325481CB40087CDC0 /* AuthenticatedView.swift in Sources */,
+				E90CF8E825481E000087CDC0 /* TokenView.swift in Sources */,
 				E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */,
+				E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */,
 				E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */,
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,
 				E99F699125471C3000DC6D51 /* BiometricLoginSettingView.swift in Sources */,
-				E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */,
+				E90CF8D32547FE490087CDC0 /* UserSettings.swift in Sources */,
+				E90CF8D7254800BE0087CDC0 /* LABiometricType+Extensions.swift in Sources */,
 				E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */,
-				E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */,
 				E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

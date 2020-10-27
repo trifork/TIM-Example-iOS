@@ -1,56 +1,78 @@
 import SwiftUI
 import TIM
-import os.log
+import LocalAuthentication
 
 struct LoginView: View {
     let userId: String
-
     @State private var hasStoredPasswordWithBioID: Bool = false
     @State private var password: String = ""
-    @State private var statusText: String = "-"
+    @State private var showAuthenticatedView: Bool = false
+
+    @State private var error: Error?
     
     var body: some View {
-        VStack(spacing: 40) {
-            HStack {
-                Text("Password:")
-                TextField("Enter password here", text: $password)
+        Form {
+            Section {
+                Text("Welcome \(UserSettings.name(userId: userId) ?? "Unknown")!")
+                    .bold()
+                    .multilineTextAlignment(.center)
             }
-            Button("Login with password") {
-                statusText = "..."
-//                TIM.auth.loginWithPassword(password, storeNewRefreshToken: true) { (res: Result<JWT, Error>) in
-//                    switch res {
-//                    case .success(let accessToken):
-//                        statusText = "Received AT:\n\(accessToken)"
-//                    case .failure(let error):
-//                        statusText = "Failed to retrieve AT.\n\(error.localizedDescription)"
-//                    }
-//                }
+            Section(header: Text("Login with password")) {
+                SecureField("PIN", text: $password)
+                    .padding()
+                    .multilineTextAlignment(.center)
+                Button("Login") {
+                    TIM.auth.loginWithPassword(userId: userId, password: password, storeNewRefreshToken: true) { (result) in
+                        handleLoginResult(result)
+                    }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                .padding()
+                .disabled(password.count < 4)
             }
-            .disabled(password.isEmpty)
-            Text("... or ...").bold()
-            Button("Login with TouchID/FaceID") {
-                statusText = "..."
-//                TIM.auth.loginWithBiometricId { (res: Result<JWT, Error>) in
-//                    switch res {
-//                    case .success(let accessToken):
-//                        statusText = "Received AT:\n\(accessToken)"
-//                    case .failure(let error):
-//                        statusText = "Failed to retrieve AT.\n\(error.localizedDescription)"
-//                    }
-//                }
+            if hasBioLoginActivated {
+                Section(header: Text(biometricIdName)) {
+                    Button("Login with \(biometricIdName)") {
+                        TIM.auth.loginWithBiometricId(userId: userId, storeNewRefreshToken: true) { (result) in
+                            handleLoginResult(result)
+                        }
+                    }
+                }
             }
-            .disabled(!hasStoredPasswordWithBioID)
-            ScrollView {
-                Text("Status:").bold()
-                Text(statusText)
+            if let error = error {
+                Section(header: Text("Error status")) {
+                    Text(error.localizedDescription)
+                        .bold()
+                }
+                .foregroundColor(.red)
             }
-            Spacer()
         }
-        .padding()
-        .onAppear(perform: {
-//            hasStoredPasswordWithBioID = TIM.storage.hasStoredPassword
-        })
         .navigationBarTitle("Login")
+        NavigationLink(
+            destination: AuthenticatedView(userId: userId),
+            isActive: $showAuthenticatedView,
+            label: {
+                EmptyView()
+            }).hidden()
+    }
+
+    private func handleLoginResult(_ result: Result<JWT, Error>) {
+        switch result {
+        case .success:
+            error = nil
+            showAuthenticatedView = true
+        case .failure(let error):
+            print("Failed to login: \(error.localizedDescription)")
+            self.error = error
+        }
+    }
+
+    private var hasBioLoginActivated: Bool {
+        LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) && TIM.storage.hasBiometricAccessForRefreshToken(userId: userId)
+    }
+
+    private var biometricIdName: String {
+        LAContext().biometryType.biometricIdName
     }
 }
 

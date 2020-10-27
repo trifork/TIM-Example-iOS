@@ -5,9 +5,11 @@ import AppAuth
 
 @main
 struct TIMExampleiOSApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(NavigationViewRoot())
                 .onAppear(perform: {
                     let creds = OpenIDCredentials(
                         issuer: URL(string: "https://oidc-test.hosted.trifork.com/auth/realms/dev")!,
@@ -26,5 +28,6 @@ struct TIMExampleiOSApp: App {
                     TIM.auth.handleRedirect(url: url)
                 })
         }
+
     }
 }

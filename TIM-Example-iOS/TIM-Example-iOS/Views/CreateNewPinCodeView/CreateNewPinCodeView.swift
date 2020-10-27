@@ -54,15 +54,19 @@ struct CreateNewPinCodeView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                 }
             }
-        NavigationLink(
-            destination: BiometricLoginSettingView(
-                userId: userId ?? "",
-                password: pinCode
-            ),
-            isActive: $presentLogin) {
-            EmptyView()
-        }
-        .hidden()
+            .sheet(isPresented: $presentLogin, content: {
+                BiometricLoginSettingView(
+                    userId: Binding(
+                        get: { $userId.wrappedValue ?? "<missing userId>" },
+                        set: { v in $userId.wrappedValue = v}
+                    ),
+                    password: pinCode,
+                    didFinishBiometricHandling: { _ in
+                        self.presentLogin = false
+                        self.navigationViewRoot.popToRoot = true
+                    }
+                )
+            })
         .navigationTitle("New user")
     }
 }

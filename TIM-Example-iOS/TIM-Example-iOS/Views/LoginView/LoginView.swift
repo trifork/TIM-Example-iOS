@@ -12,23 +12,12 @@ struct LoginView: View {
     
     var body: some View {
         Form {
-            Section {
-                Text("Welcome \(UserSettings.name(userId: userId) ?? "Unknown")!")
-                    .bold()
-                    .multilineTextAlignment(.center)
-            }
             Section(header: Text("Login with password")) {
-                SecureField("PIN", text: $password)
-                    .padding()
-                    .multilineTextAlignment(.center)
-                Button("Login") {
-                    TIM.auth.loginWithPassword(userId: userId, password: password, storeNewRefreshToken: true) { (result) in
+                LoginWithPinCodeView(buttonTitle: "Login", handleLogin: { (pinCode) in
+                    TIM.auth.loginWithPassword(userId: userId, password: pinCode, storeNewRefreshToken: true) { (result) in
                         handleLoginResult(result)
                     }
-                }
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                .padding()
-                .disabled(password.count < 4)
+                })
             }
             if hasBioLoginActivated {
                 Section(header: Text(biometricIdName)) {
@@ -47,7 +36,7 @@ struct LoginView: View {
                 .foregroundColor(.red)
             }
         }
-        .navigationBarTitle("Login")
+        .navigationBarTitle(UserSettings.name(userId: userId) ?? "Unknown")
         NavigationLink(
             destination: AuthenticatedView(userId: userId),
             isActive: $showAuthenticatedView,

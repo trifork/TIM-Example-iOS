@@ -1,7 +1,7 @@
 import SwiftUI
 import TIM
 
-struct ContentView: View {
+struct WelcomeView: View {
     @State private var hasRefreshToken: Bool = false
     @State private var hasStoredRefreshToken: Bool = false
     @State private var availableUserIds: [String] = Array(TIM.storage.availableUserIds)
@@ -93,8 +93,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WelcomeView()
     }
 }

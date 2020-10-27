@@ -8,7 +8,7 @@ struct TIMExampleiOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
                 .environmentObject(NavigationViewRoot())
                 .onAppear(perform: {
                     let creds = OpenIDCredentials(

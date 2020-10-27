@@ -7,36 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E96B86CC253EE710000E3CDA /* TriforkIdentityManager-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */; };
-		E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86CE253EF84A000E3CDA /* StorageView.swift */; };
+		E90CF8D32547FE490087CDC0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8D22547FE490087CDC0 /* UserSettings.swift */; };
+		E90CF8D7254800BE0087CDC0 /* LABiometricType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */; };
+		E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */; };
+		E90CF8E325481CB40087CDC0 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */; };
+		E90CF8E825481E000087CDC0 /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8E725481E000087CDC0 /* TokenView.swift */; };
+		E90CF8F125482B930087CDC0 /* LoginWithPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8F025482B930087CDC0 /* LoginWithPinCodeView.swift */; };
+		E92C6A992541AF0F00B46B87 /* TIM in Frameworks */ = {isa = PBXBuildFile; productRef = E92C6A982541AF0F00B46B87 /* TIM */; };
 		E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86D3253F0040000E3CDA /* JWTDecoder.swift */; };
-		E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */; };
 		E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86E0253F1051000E3CDA /* LoginView.swift */; };
-		E986FD1D253ECED900C2E6EE /* AuthSFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986FD1C253ECED900C2E6EE /* AuthSFController.swift */; };
-		E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */; };
-		E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* ContentView.swift */; };
+		E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */; };
+		E99F699125471C3000DC6D51 /* BiometricLoginSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */; };
+		E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */; };
+		E9E9F6B7253EC3E000612836 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* WelcomeView.swift */; };
 		E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6B8253EC3E200612836 /* Assets.xcassets */; };
 		E9E9F6BC253EC3E200612836 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */; };
-		E9E9F6C7253EC4DF00612836 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E9E9F6C6253EC4DF00612836 /* AppAuth */; };
-		E9E9F6C9253EC4DF00612836 /* AppAuthCore in Frameworks */ = {isa = PBXBuildFile; productRef = E9E9F6C8253EC4DF00612836 /* AppAuthCore */; };
-		E9E9F6CC253EC72100612836 /* AppAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6CB253EC72100612836 /* AppAuthController.swift */; };
-		E9E9F6D4253EC7B000612836 /* OpenIDCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6D3253EC7B000612836 /* OpenIDCredentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E96B86CE253EF84A000E3CDA /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		E90CF8D22547FE490087CDC0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LABiometricType+Extensions.swift"; sourceTree = "<group>"; };
+		E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewRoot.swift; sourceTree = "<group>"; };
+		E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		E90CF8E725481E000087CDC0 /* TokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenView.swift; sourceTree = "<group>"; };
+		E90CF8F025482B930087CDC0 /* LoginWithPinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithPinCodeView.swift; sourceTree = "<group>"; };
 		E96B86D3253F0040000E3CDA /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
-		E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshLoginView.swift; sourceTree = "<group>"; };
 		E96B86E0253F1051000E3CDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E986FD1C253ECED900C2E6EE /* AuthSFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSFController.swift; sourceTree = "<group>"; };
-		E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TriforkIdentityManager-Swift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforkIdentityManager_Swift_ExampleApp.swift; sourceTree = "<group>"; };
-		E9E9F6B6253EC3E000612836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinCodeView.swift; sourceTree = "<group>"; };
+		E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginSettingView.swift; sourceTree = "<group>"; };
+		E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIM-Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TIM-Example-App.swift"; sourceTree = "<group>"; };
+		E9E9F6B6253EC3E000612836 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		E9E9F6B8253EC3E200612836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9E9F6BB253EC3E200612836 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9E9F6BD253EC3E200612836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9E9F6CB253EC72100612836 /* AppAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuthController.swift; sourceTree = "<group>"; };
-		E9E9F6D3253EC7B000612836 /* OpenIDCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenIDCredentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,19 +48,90 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96B86CC253EE710000E3CDA /* TriforkIdentityManager-Swift in Frameworks */,
-				E9E9F6C7253EC4DF00612836 /* AppAuth in Frameworks */,
-				E9E9F6C9253EC4DF00612836 /* AppAuthCore in Frameworks */,
+				E92C6A992541AF0F00B46B87 /* TIM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90CF8D5254800AB0087CDC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E90CF8DC254818AD0087CDC0 /* EnvironmentObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */,
+			);
+			path = EnvironmentObjects;
+			sourceTree = "<group>";
+		};
+		E90CF8E125481C9D0087CDC0 /* AuthenticatedView */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */,
+			);
+			path = AuthenticatedView;
+			sourceTree = "<group>";
+		};
+		E90CF8E625481DF60087CDC0 /* TokenView */ = {
+			isa = PBXGroup;
+			children = (
+				E90CF8E725481E000087CDC0 /* TokenView.swift */,
+			);
+			path = TokenView;
+			sourceTree = "<group>";
+		};
+		E90CF8EB25482B360087CDC0 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				E96B86E0253F1051000E3CDA /* LoginView.swift */,
+				E90CF8F025482B930087CDC0 /* LoginWithPinCodeView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		E90CF8EC25482B3E0087CDC0 /* CreateNewPinCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */,
+			);
+			path = CreateNewPinCodeView;
+			sourceTree = "<group>";
+		};
+		E90CF8ED25482B470087CDC0 /* BiometricLoginSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */,
+			);
+			path = BiometricLoginSettingView;
+			sourceTree = "<group>";
+		};
+		E90CF8EE25482B580087CDC0 /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9F6B6253EC3E000612836 /* WelcomeView.swift */,
+			);
+			path = WelcomeView;
+			sourceTree = "<group>";
+		};
+		E90CF8F425482DD10087CDC0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		E96B86D2253F0037000E3CDA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				E96B86D3253F0040000E3CDA /* JWTDecoder.swift */,
+				E90CF8D22547FE490087CDC0 /* UserSettings.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -64,7 +139,7 @@
 		E9E9F6A8253EC3E000612836 = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B3253EC3E000612836 /* TriforkIdentityManager-Swift-Example */,
+				E9E9F6B3253EC3E000612836 /* TIM-Example-iOS */,
 				E9E9F6B2253EC3E000612836 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,23 +147,23 @@
 		E9E9F6B2253EC3E000612836 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */,
+				E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9E9F6B3253EC3E000612836 /* TriforkIdentityManager-Swift-Example */ = {
+		E9E9F6B3253EC3E000612836 /* TIM-Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E96B86D2253F0037000E3CDA /* Helpers */,
 				E9E9F6CF253EC76000612836 /* App */,
-				E9E9F6CE253EC74D00612836 /* Controllers */,
-				E9E9F6D2253EC79F00612836 /* Models */,
+				E90CF8DC254818AD0087CDC0 /* EnvironmentObjects */,
+				E90CF8D5254800AB0087CDC0 /* Extensions */,
+				E96B86D2253F0037000E3CDA /* Helpers */,
 				E9E9F6BA253EC3E200612836 /* Preview Content */,
 				E9E9F6D1253EC76E00612836 /* Resources */,
 				E9E9F6D0253EC76800612836 /* Views */,
 			);
-			path = "TriforkIdentityManager-Swift-Example";
+			path = "TIM-Example-iOS";
 			sourceTree = "<group>";
 		};
 		E9E9F6BA253EC3E200612836 /* Preview Content */ = {
@@ -99,19 +174,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E9E9F6CE253EC74D00612836 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E9E9F6CB253EC72100612836 /* AppAuthController.swift */,
-				E986FD1C253ECED900C2E6EE /* AuthSFController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		E9E9F6CF253EC76000612836 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B4253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift */,
+				E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -119,10 +185,13 @@
 		E9E9F6D0253EC76800612836 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9E9F6B6253EC3E000612836 /* ContentView.swift */,
-				E96B86CE253EF84A000E3CDA /* StorageView.swift */,
-				E96B86DC253F05D9000E3CDA /* FreshLoginView.swift */,
-				E96B86E0253F1051000E3CDA /* LoginView.swift */,
+				E90CF8F425482DD10087CDC0 /* New Group */,
+				E90CF8E125481C9D0087CDC0 /* AuthenticatedView */,
+				E90CF8ED25482B470087CDC0 /* BiometricLoginSettingView */,
+				E90CF8EC25482B3E0087CDC0 /* CreateNewPinCodeView */,
+				E90CF8EB25482B360087CDC0 /* LoginView */,
+				E90CF8E625481DF60087CDC0 /* TokenView */,
+				E90CF8EE25482B580087CDC0 /* WelcomeView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,20 +205,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E9E9F6D2253EC79F00612836 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E9E9F6D3253EC7B000612836 /* OpenIDCredentials.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9E9F6B0253EC3E000612836 /* TriforkIdentityManager-Swift-Example */ = {
+		E9E9F6B0253EC3E000612836 /* TIM-Example-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TriforkIdentityManager-Swift-Example" */;
+			buildConfigurationList = E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TIM-Example-iOS" */;
 			buildPhases = (
 				E9E9F6AD253EC3E000612836 /* Sources */,
 				E9E9F6AE253EC3E000612836 /* Frameworks */,
@@ -159,14 +220,12 @@
 			);
 			dependencies = (
 			);
-			name = "TriforkIdentityManager-Swift-Example";
+			name = "TIM-Example-iOS";
 			packageProductDependencies = (
-				E9E9F6C6253EC4DF00612836 /* AppAuth */,
-				E9E9F6C8253EC4DF00612836 /* AppAuthCore */,
-				E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */,
+				E92C6A982541AF0F00B46B87 /* TIM */,
 			);
 			productName = "TriforkIdentityManager-Swift-Example";
-			productReference = E9E9F6B1253EC3E000612836 /* TriforkIdentityManager-Swift-Example.app */;
+			productReference = E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +242,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TriforkIdentityManager-Swift-Example" */;
+			buildConfigurationList = E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TIM-Example-iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -193,14 +252,13 @@
 			);
 			mainGroup = E9E9F6A8253EC3E000612836;
 			packageReferences = (
-				E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
-				E96B86CA253EE710000E3CDA /* XCRemoteSwiftPackageReference "TriforkIdentityManager-Swift" */,
+				E92C6A972541AF0F00B46B87 /* XCRemoteSwiftPackageReference "TIM-iOS" */,
 			);
 			productRefGroup = E9E9F6B2253EC3E000612836 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9E9F6B0253EC3E000612836 /* TriforkIdentityManager-Swift-Example */,
+				E9E9F6B0253EC3E000612836 /* TIM-Example-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -222,14 +280,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E9F6B7253EC3E000612836 /* ContentView.swift in Sources */,
-				E986FD1D253ECED900C2E6EE /* AuthSFController.swift in Sources */,
-				E9E9F6CC253EC72100612836 /* AppAuthController.swift in Sources */,
+				E90CF8E325481CB40087CDC0 /* AuthenticatedView.swift in Sources */,
+				E90CF8E825481E000087CDC0 /* TokenView.swift in Sources */,
+				E9E9F6B7253EC3E000612836 /* WelcomeView.swift in Sources */,
+				E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */,
+				E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */,
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,
-				E96B86DD253F05D9000E3CDA /* FreshLoginView.swift in Sources */,
-				E9E9F6B5253EC3E000612836 /* TriforkIdentityManager_Swift_ExampleApp.swift in Sources */,
-				E9E9F6D4253EC7B000612836 /* OpenIDCredentials.swift in Sources */,
-				E96B86CF253EF84A000E3CDA /* StorageView.swift in Sources */,
+				E99F699125471C3000DC6D51 /* BiometricLoginSettingView.swift in Sources */,
+				E90CF8F125482B930087CDC0 /* LoginWithPinCodeView.swift in Sources */,
+				E90CF8D32547FE490087CDC0 /* UserSettings.swift in Sources */,
+				E90CF8D7254800BE0087CDC0 /* LABiometricType+Extensions.swift in Sources */,
+				E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */,
 				E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,17 +419,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TriforkIdentityManager-Swift-Example/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TIM-Example-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = ZZGMPFLA2F;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "TriforkIdentityManager-Swift-Example/Resources/Info.plist";
+				INFOPLIST_FILE = "TIM-Example-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.trifork.TriforkIdentityManager-Swift-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trifork.TIM-Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,17 +442,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TriforkIdentityManager-Swift-Example/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TIM-Example-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = ZZGMPFLA2F;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "TriforkIdentityManager-Swift-Example/Resources/Info.plist";
+				INFOPLIST_FILE = "TIM-Example-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.trifork.TriforkIdentityManager-Swift-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trifork.TIM-Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -400,7 +463,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TriforkIdentityManager-Swift-Example" */ = {
+		E9E9F6AC253EC3E000612836 /* Build configuration list for PBXProject "TIM-Example-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9E9F6BE253EC3E200612836 /* Debug */,
@@ -409,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TriforkIdentityManager-Swift-Example" */ = {
+		E9E9F6C0253EC3E200612836 /* Build configuration list for PBXNativeTarget "TIM-Example-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9E9F6C1253EC3E200612836 /* Debug */,
@@ -421,39 +484,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E96B86CA253EE710000E3CDA /* XCRemoteSwiftPackageReference "TriforkIdentityManager-Swift" */ = {
+		E92C6A972541AF0F00B46B87 /* XCRemoteSwiftPackageReference "TIM-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tkctrifork/TriforkIdentityManager-Swift";
+			repositoryURL = "https://github.com/tkctrifork/TIM-iOS.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/openid/AppAuth-iOS";
-			requirement = {
-				kind = exactVersion;
-				version = 1.4.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E96B86CB253EE710000E3CDA /* TriforkIdentityManager-Swift */ = {
+		E92C6A982541AF0F00B46B87 /* TIM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E96B86CA253EE710000E3CDA /* XCRemoteSwiftPackageReference "TriforkIdentityManager-Swift" */;
-			productName = "TriforkIdentityManager-Swift";
-		};
-		E9E9F6C6253EC4DF00612836 /* AppAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
-			productName = AppAuth;
-		};
-		E9E9F6C8253EC4DF00612836 /* AppAuthCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E9E9F6C5253EC4DF00612836 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
-			productName = AppAuthCore;
+			package = E92C6A972541AF0F00B46B87 /* XCRemoteSwiftPackageReference "TIM-iOS" */;
+			productName = TIM;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

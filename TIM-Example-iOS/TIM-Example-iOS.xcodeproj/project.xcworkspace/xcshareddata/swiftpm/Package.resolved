@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AppAuth",
+        "repositoryURL": "https://github.com/openid/AppAuth-iOS",
+        "state": {
+          "branch": null,
+          "revision": "01131d68346c8ae552961c768d583c715fbe1410",
+          "version": "1.4.0"
+        }
+      },
+      {
+        "package": "TIM",
+        "repositoryURL": "https://github.com/tkctrifork/TIM-iOS.git",
+        "state": {
+          "branch": "main",
+          "revision": "33f4834f26ee6df4edbd7d775ebdde08f7a4219c",
+          "version": null
+        }
+      },
+      {
+        "package": "TIMEncryptedStorage",
+        "repositoryURL": "https://github.com/tkctrifork/TIMEncryptedStorage-iOS",
+        "state": {
+          "branch": "main",
+          "revision": "456627aa0c45a2f486ff0bffac6c510b98690996",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

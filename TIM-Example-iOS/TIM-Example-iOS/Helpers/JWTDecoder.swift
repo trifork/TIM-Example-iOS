@@ -1,6 +1,14 @@
 import Foundation
 
-final class JWTDecoder {
+private let EXPIRE_KEY: String = "exp"
+typealias JWT = String
+extension JWT {
+    var expireTimestamp: TimeInterval? {
+        JWTDecoder.decode(jwtToken: self)[EXPIRE_KEY] as? TimeInterval
+    }
+}
+
+private final class JWTDecoder {
     static func decode(jwtToken jwt: String) -> [String: Any] {
       let segments = jwt.components(separatedBy: ".")
       return decodeJWTPart(segments[1]) ?? [:]

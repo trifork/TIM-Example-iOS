@@ -11,18 +11,19 @@ struct TIMExampleiOSApp: App {
             WelcomeView()
                 .environmentObject(NavigationViewRoot())
                 .onAppear(perform: {
-                    let creds = OpenIDCredentials(
-                        issuer: URL(string: "https://oidc-test.hosted.trifork.com/auth/realms/dev")!,
-                        clientId: "test",
-                        redirectUri: URL(string: "test:/")!,
-                        scopes: [OIDScopeOpenID, OIDScopeProfile]
+                    let config = TIMConfiguration(
+                        oidc: TIMOpenIDConfiguration(
+                            issuer: URL(string: "https://oidc-test.hosted.trifork.com/auth/realms/dev")!,
+                            clientId: "test",
+                            redirectUri: URL(string: "test:/")!,
+                            scopes: [OIDScopeOpenID, OIDScopeProfile]
+                        ),
+                        keyService: TIMKeyServiceConfiguration(
+                            realmBaseUrl: "https://oidc-test.hosted.trifork.com/auth/realms/dev",
+                            version: .v1
+                        )
                     )
-                    let keyServiceUrl = "https://oidc-test.hosted.trifork.com/auth/realms/dev"
-                    let keyServiceConfig = TIMKeyServiceConfiguration(
-                        realmBaseUrl: keyServiceUrl,
-                        version: .v1
-                    )
-                    TIM.configure(openIDCredentials: creds, keyServiceConfiguration: keyServiceConfig)
+                    TIM.configure(configuration: config)
                 })
                 .onOpenURL(perform: { url in
                     TIM.auth.handleRedirect(url: url)

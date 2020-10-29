@@ -13,7 +13,6 @@
 		E90CF8E325481CB40087CDC0 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */; };
 		E90CF8E825481E000087CDC0 /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8E725481E000087CDC0 /* TokenView.swift */; };
 		E90CF8F125482B930087CDC0 /* LoginWithPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8F025482B930087CDC0 /* LoginWithPinCodeView.swift */; };
-		E92C6A992541AF0F00B46B87 /* TIM in Frameworks */ = {isa = PBXBuildFile; productRef = E92C6A982541AF0F00B46B87 /* TIM */; };
 		E96B86D4253F0040000E3CDA /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86D3253F0040000E3CDA /* JWTDecoder.swift */; };
 		E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B86E0253F1051000E3CDA /* LoginView.swift */; };
 		E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F698D2547104C00DC6D51 /* CreateNewPinCodeView.swift */; };
@@ -23,6 +22,7 @@
 		E9C09C75254ABFD1005C3E97 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C74254ABFD1005C3E97 /* WelcomeViewModel.swift */; };
 		E9C09C78254AC174005C3E97 /* CreateNewPinCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C77254AC174005C3E97 /* CreateNewPinCodeViewModel.swift */; };
 		E9C09C7B254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C7A254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift */; };
+		E9C09C9C254ADCE3005C3E97 /* TIM in Frameworks */ = {isa = PBXBuildFile; productRef = E9C09C9B254ADCE3005C3E97 /* TIM */; };
 		E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */; };
 		E9E9F6B7253EC3E000612836 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* WelcomeView.swift */; };
 		E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6B8253EC3E200612836 /* Assets.xcassets */; };
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92C6A992541AF0F00B46B87 /* TIM in Frameworks */,
+				E9C09C9C254ADCE3005C3E97 /* TIM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +229,7 @@
 			);
 			name = "TIM-Example-iOS";
 			packageProductDependencies = (
-				E92C6A982541AF0F00B46B87 /* TIM */,
+				E9C09C9B254ADCE3005C3E97 /* TIM */,
 			);
 			productName = "TriforkIdentityManager-Swift-Example";
 			productReference = E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */;
@@ -259,7 +259,7 @@
 			);
 			mainGroup = E9E9F6A8253EC3E000612836;
 			packageReferences = (
-				E92C6A972541AF0F00B46B87 /* XCRemoteSwiftPackageReference "TIM-iOS" */,
+				E9C09C9A254ADCE3005C3E97 /* XCRemoteSwiftPackageReference "TIM-iOS" */,
 			);
 			productRefGroup = E9E9F6B2253EC3E000612836 /* Products */;
 			projectDirPath = "";
@@ -496,9 +496,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E92C6A972541AF0F00B46B87 /* XCRemoteSwiftPackageReference "TIM-iOS" */ = {
+		E9C09C9A254ADCE3005C3E97 /* XCRemoteSwiftPackageReference "TIM-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tkctrifork/TIM-iOS.git";
+			repositoryURL = "https://github.com/trifork/TIM-iOS.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -507,9 +507,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E92C6A982541AF0F00B46B87 /* TIM */ = {
+		E9C09C9B254ADCE3005C3E97 /* TIM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E92C6A972541AF0F00B46B87 /* XCRemoteSwiftPackageReference "TIM-iOS" */;
+			package = E9C09C9A254ADCE3005C3E97 /* XCRemoteSwiftPackageReference "TIM-iOS" */;
 			productName = TIM;
 		};
 /* End XCSwiftPackageProductDependency section */

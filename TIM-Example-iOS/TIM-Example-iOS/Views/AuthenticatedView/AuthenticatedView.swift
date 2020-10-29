@@ -16,8 +16,8 @@ struct AuthenticatedView: View {
                 Text("You have successfully logged in with either PIN code or Biometric ID! 🥳")
             }
             Section(header: Text("Active tokens")) {
-                NavigationLink("Access Token", destination: TokenView(tokenType: .accessToken))
-                NavigationLink("Refresh Token", destination: TokenView(tokenType: .refreshToken))
+                NavigationLink("Access Token", destination: TokenView(viewModel: TokenView.ViewModel(tokenType: .accessToken)))
+                NavigationLink("Refresh Token", destination: TokenView(viewModel: TokenView.ViewModel(tokenType: .refreshToken)))
             }
             Section(header: Text("Biometric settings")) {
                 if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {

@@ -3,70 +3,47 @@ import TIM
 import LocalAuthentication
 
 struct LoginView: View {
-    let userId: String
-    @State private var hasStoredPasswordWithBioID: Bool = false
-    @State private var password: String = ""
-    @State private var showAuthenticatedView: Bool = false
-
-    @State private var error: Error?
+    @ObservedObject var viewModel: LoginView.ViewModel
     
     var body: some View {
         Form {
             Section(header: Text("Login with password")) {
                 LoginWithPinCodeView(buttonTitle: "Login", handleLogin: { (pinCode) in
-                    TIM.auth.loginWithPassword(userId: userId, password: pinCode, storeNewRefreshToken: true) { (result) in
-                        handleLoginResult(result)
-                    }
+                    viewModel.login(password: pinCode)
                 })
             }
-            if hasBioLoginActivated {
-                Section(header: Text(biometricIdName)) {
-                    Button("Login with \(biometricIdName)") {
-                        TIM.auth.loginWithBiometricId(userId: userId, storeNewRefreshToken: true) { (result) in
-                            handleLoginResult(result)
-                        }
+            .disabled(viewModel.isLoading)
+            if viewModel.hasBioLoginActivated {
+                Section(header: Text(viewModel.biometricIdName)) {
+                    Button("Login with \(viewModel.biometricIdName)") {
+                        viewModel.loginWithBio()
                     }
                 }
+                .disabled(viewModel.isLoading)
             }
-            if let error = error {
+            if let error = viewModel.error {
                 Section(header: Text("Error status")) {
                     Text(error.localizedDescription)
                         .bold()
+                        .foregroundColor(.red)
                 }
-                .foregroundColor(.red)
+            } else if viewModel.isLoading {
+                Text("Logging in...")
+                    .multilineTextAlignment(.center)
             }
         }
-        .navigationBarTitle(UserSettings.name(userId: userId) ?? "Unknown")
+        .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         NavigationLink(
-            destination: AuthenticatedView(userId: userId),
-            isActive: $showAuthenticatedView,
+            destination: AuthenticatedView(userId: viewModel.userId),
+            isActive: $viewModel.showAuthenticatedView,
             label: {
                 EmptyView()
             }).hidden()
-    }
-
-    private func handleLoginResult(_ result: Result<JWT, Error>) {
-        switch result {
-        case .success:
-            error = nil
-            showAuthenticatedView = true
-        case .failure(let error):
-            print("Failed to login: \(error.localizedDescription)")
-            self.error = error
-        }
-    }
-
-    private var hasBioLoginActivated: Bool {
-        LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) && TIM.storage.hasBiometricAccessForRefreshToken(userId: userId)
-    }
-
-    private var biometricIdName: String {
-        LAContext().biometryType.biometricIdName
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(userId: "userId")
+        LoginView(viewModel: LoginView.ViewModel(userId: "userId"))
     }
 }

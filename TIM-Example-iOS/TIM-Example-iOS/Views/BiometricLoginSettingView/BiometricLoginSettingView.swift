@@ -5,7 +5,7 @@ import LocalAuthentication
 
 struct BiometricLoginSettingView: View {
     @Binding var userId: String
-    let password: String?
+    @State var password: String?
     let didFinishBiometricHandling: (Bool) -> Void
 
     var body: some View {

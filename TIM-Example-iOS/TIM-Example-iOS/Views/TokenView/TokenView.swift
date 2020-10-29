@@ -1,5 +1,6 @@
 import SwiftUI
 import TIM
+import Combine
 
 enum TokenType {
     case accessToken
@@ -16,56 +17,43 @@ enum TokenType {
 }
 
 struct TokenView: View {
-    let tokenType: TokenType
-    @State var token: JWT? = nil
+    @ObservedObject var viewModel: TokenView.ViewModel
 
     var body: some View {
         Form {
-            if let token = token {
+            if let error = viewModel.error {
+                Text("An error occurred:\n\(error.localizedDescription)")
+                    .bold()
+                    .foregroundColor(.red)
+            } else if let token = viewModel.token {
                 Section {
                     Button("Print to console") {
-                        print("------BEGIN \(tokenType.title) BEGIN------")
+                        print("------BEGIN \(viewModel.tokenType.title) BEGIN------")
                         print(token)
-                        print("------END \(tokenType.title) END------")
+                        print("------END \(viewModel.tokenType.title) END------")
                     }
                     Button("Copy to clipboard") {
-                        UIPasteboard.general.string = token
+                        if let token = viewModel.token {
+                            UIPasteboard.general.string = token
+                        }
                     }
                 }
                 Section {
-                    Text(token)
+                    Text(viewModel.token ?? "N/A")
                 }
             } else {
-                Section {
-                    Text("Retrieving token ...")
-                }
+                Text("Loading ...")
             }
         }
         .onAppear(perform: {
-            loadToken()
+            viewModel.loadToken()
         })
-        .navigationTitle(tokenType.title)
-    }
-
-    private func loadToken() {
-        switch tokenType {
-        case .accessToken:
-            TIM.auth.accessToken { (result) in
-                switch result {
-                case .success(let at):
-                    token = at
-                case .failure(let error):
-                    token = "Failed to load token:\n\(error.localizedDescription)"
-                }
-            }
-        case .refreshToken:
-            token = TIM.auth.refreshToken
-        }
+        .navigationTitle(viewModel.tokenType.title)
     }
 }
 
 struct TokenView_Previews: PreviewProvider {
     static var previews: some View {
-        TokenView(tokenType: .accessToken)
+        TokenView(viewModel: TokenView.ViewModel(tokenType: .accessToken))
     }
 }

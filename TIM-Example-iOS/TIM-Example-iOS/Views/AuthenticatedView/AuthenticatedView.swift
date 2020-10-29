@@ -31,12 +31,14 @@ struct AuthenticatedView: View {
                             presentBiometricSetting = true
                         }.sheet(isPresented: $presentBiometricSetting, content: {
                             BiometricLoginSettingView(
-                                userId: .constant(userId),
-                                password: nil,
-                                didFinishBiometricHandling: { _ in
-                                    presentBiometricSetting = false
-                                    biometricAccessOberserver.update(userId: userId)
-                                })
+                                viewModel: BiometricLoginSettingView.ViewModel(
+                                    userId: .constant(userId),
+                                    password: nil,
+                                    didFinishBiometricHandling: { _ in
+                                        presentBiometricSetting = false
+                                        biometricAccessOberserver.update(userId: userId)
+                                    })
+                            )
                         })
                     }
                 } else {

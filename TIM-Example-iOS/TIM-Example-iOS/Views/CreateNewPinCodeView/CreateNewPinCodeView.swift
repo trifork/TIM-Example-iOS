@@ -34,15 +34,17 @@ struct CreateNewPinCodeView: View {
             }
             .sheet(isPresented: $viewModel.presentLogin, content: {
                 BiometricLoginSettingView(
-                    userId: Binding(
-                        get: { $viewModel.userId.wrappedValue ?? "<missing userId>" },
-                        set: { v in $viewModel.userId.wrappedValue = v}
-                    ),
-                    password: viewModel.pinCode,
-                    didFinishBiometricHandling: { _ in
-                        self.viewModel.presentLogin = false
-                        self.navigationViewRoot.popToRoot = true
-                    }
+                    viewModel: BiometricLoginSettingView.ViewModel(
+                        userId: Binding(
+                            get: { $viewModel.userId.wrappedValue ?? "<missing userId>" },
+                            set: { v in $viewModel.userId.wrappedValue = v}
+                        ),
+                        password: viewModel.pinCode,
+                        didFinishBiometricHandling: { _ in
+                            self.viewModel.presentLogin = false
+                            self.navigationViewRoot.popToRoot = true
+                        }
+                    )
                 )
             })
         .navigationTitle("New user")

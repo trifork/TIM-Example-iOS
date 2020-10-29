@@ -22,6 +22,7 @@
 		E9C09C72254AB565005C3E97 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C71254AB565005C3E97 /* LoginViewModel.swift */; };
 		E9C09C75254ABFD1005C3E97 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C74254ABFD1005C3E97 /* WelcomeViewModel.swift */; };
 		E9C09C78254AC174005C3E97 /* CreateNewPinCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C77254AC174005C3E97 /* CreateNewPinCodeViewModel.swift */; };
+		E9C09C7B254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09C7A254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift */; };
 		E9E9F6B5253EC3E000612836 /* TIM-Example-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */; };
 		E9E9F6B7253EC3E000612836 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F6B6253EC3E000612836 /* WelcomeView.swift */; };
 		E9E9F6B9253EC3E200612836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F6B8253EC3E200612836 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		E9C09C71254AB565005C3E97 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E9C09C74254ABFD1005C3E97 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		E9C09C77254AC174005C3E97 /* CreateNewPinCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinCodeViewModel.swift; sourceTree = "<group>"; };
+		E9C09C7A254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginSettingViewModel.swift; sourceTree = "<group>"; };
 		E9E9F6B1253EC3E000612836 /* TIM-Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIM-Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9F6B4253EC3E000612836 /* TIM-Example-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TIM-Example-App.swift"; sourceTree = "<group>"; };
 		E9E9F6B6253EC3E000612836 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E99F699025471C3000DC6D51 /* BiometricLoginSettingView.swift */,
+				E9C09C7A254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift */,
 			);
 			path = BiometricLoginSettingView;
 			sourceTree = "<group>";
@@ -130,13 +133,6 @@
 				E9C09C74254ABFD1005C3E97 /* WelcomeViewModel.swift */,
 			);
 			path = WelcomeView;
-			sourceTree = "<group>";
-		};
-		E90CF8F425482DD10087CDC0 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E96B86D2253F0037000E3CDA /* Helpers */ = {
@@ -197,7 +193,6 @@
 		E9E9F6D0253EC76800612836 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E90CF8F425482DD10087CDC0 /* New Group */,
 				E90CF8E125481C9D0087CDC0 /* AuthenticatedView */,
 				E90CF8ED25482B470087CDC0 /* BiometricLoginSettingView */,
 				E90CF8EC25482B3E0087CDC0 /* CreateNewPinCodeView */,
@@ -297,6 +292,7 @@
 				E90CF8E825481E000087CDC0 /* TokenView.swift in Sources */,
 				E9E9F6B7253EC3E000612836 /* WelcomeView.swift in Sources */,
 				E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */,
+				E9C09C7B254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift in Sources */,
 				E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */,
 				E9C09C78254AC174005C3E97 /* CreateNewPinCodeViewModel.swift in Sources */,
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,

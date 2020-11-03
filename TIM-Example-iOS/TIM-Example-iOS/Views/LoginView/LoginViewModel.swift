@@ -12,7 +12,9 @@ extension LoginView {
 
         @Published var hasStoredPasswordWithBioID: Bool = false
         @Published var showAuthenticatedView: Bool = false
-        @Published var error: Error?
+        @Published var wrongPin: Bool = false
+        @Published var keyInvalidated: Bool = false
+        @Published var error: TIMError?
         @Published var isLoading: Bool = false
 
         init(userId: String) {
@@ -20,6 +22,7 @@ extension LoginView {
         }
 
         func login(password: String) {
+            wrongPin = false
             isLoading = true
             TIM.auth.loginWithPassword(userId: userId, password: password, storeNewRefreshToken: true)
                 .sink(
@@ -32,6 +35,7 @@ extension LoginView {
         }
 
         func loginWithBio() {
+            wrongPin = false
             isLoading = true
             TIM.auth.loginWithBiometricId(userId: userId, storeNewRefreshToken: true)
                 .sink(
@@ -42,12 +46,17 @@ extension LoginView {
                 .store(in: &futureStore)
         }
 
-        private func handleResultCompletion(_ completion: Subscribers.Completion<Error>) {
+        private func handleResultCompletion(_ completion: Subscribers.Completion<TIMError>) {
             switch completion {
             case .failure(let error):
                 self.error = error
                 isLoading = false
                 print("Failed to login: \(error.localizedDescription)")
+
+                if case TIMError.storage(let storageError) = error {
+                    wrongPin = storageError.isWrongPin()
+                    keyInvalidated = storageError.isKeyLocked()
+                }
             case .finished:
                 self.error = nil
                 isLoading = false

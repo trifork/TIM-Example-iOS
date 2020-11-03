@@ -35,7 +35,7 @@ extension BiometricLoginSettingView {
             enableBioForRefreshToken(password: password)
         }
 
-        private func handleEnableBiometricResult(_ result: Subscribers.Completion<TIMEncryptedStorageError>) {
+        private func handleEnableBiometricResult(_ result: Subscribers.Completion<TIMError>) {
             switch result {
             case .finished:
                 print("Successfully enabled biometric login for user.")

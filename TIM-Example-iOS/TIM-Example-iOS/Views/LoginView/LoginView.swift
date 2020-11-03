@@ -3,6 +3,7 @@ import TIM
 import LocalAuthentication
 
 struct LoginView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewModel: LoginView.ViewModel
     
     var body: some View {
@@ -11,6 +12,11 @@ struct LoginView: View {
                 LoginWithPinCodeView(buttonTitle: "Login", handleLogin: { (pinCode) in
                     viewModel.login(password: pinCode)
                 })
+                if viewModel.wrongPin {
+                    Text("Wrong PIN!")
+                        .foregroundColor(.red)
+                        .italic()
+                }
             }
             .disabled(viewModel.isLoading)
             if viewModel.hasBioLoginActivated {
@@ -32,6 +38,15 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
             }
         }
+        .alert(isPresented: $viewModel.keyInvalidated, content: {
+            Alert(
+                title: Text("Key invalid"),
+                message: Text("You have too many failed tries. The PIN has been invalidated. You have to register again."),
+                dismissButton: .default(Text("OK"), action: {
+                    presentationMode.wrappedValue.dismiss()
+                })
+            )
+        })
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         NavigationLink(
             destination: AuthenticatedView(userId: viewModel.userId),

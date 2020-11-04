@@ -14,6 +14,7 @@ extension LoginView {
         @Published var showAuthenticatedView: Bool = false
         @Published var wrongPin: Bool = false
         @Published var keyInvalidated: Bool = false
+        @Published var sessionExpired: Bool = false
         @Published var error: TIMError?
         @Published var isLoading: Bool = false
 
@@ -53,9 +54,14 @@ extension LoginView {
                 isLoading = false
                 print("Failed to login: \(error.localizedDescription)")
 
-                if case TIMError.storage(let storageError) = error {
+                switch error {
+                case .storage(let storageError):
                     wrongPin = storageError.isWrongPin()
                     keyInvalidated = storageError.isKeyLocked()
+                case .auth(let authError):
+                    if case TIMAuthError.refreshTokenExpired = authError {
+                        sessionExpired = true
+                    }
                 }
             case .finished:
                 self.error = nil

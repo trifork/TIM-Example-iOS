@@ -47,6 +47,15 @@ struct LoginView: View {
                 })
             )
         })
+        .alert(isPresented: $viewModel.sessionExpired, content: {
+            Alert(
+                title: Text("Session expired"),
+                message: Text("Your refresh token has expired. You have to register again."),
+                dismissButton: .default(Text("OK"), action: {
+                    presentationMode.wrappedValue.dismiss()
+                })
+            )
+        })
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         NavigationLink(
             destination: AuthenticatedView(userId: viewModel.userId),

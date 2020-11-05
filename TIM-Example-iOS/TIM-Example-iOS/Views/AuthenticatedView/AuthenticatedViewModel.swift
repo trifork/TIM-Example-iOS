@@ -8,6 +8,7 @@ extension AuthenticatedView {
         private var futureStorage = Set<AnyCancellable>()
 
         let userId: String
+
         @Published var presentBiometricSetting: Bool = false
         @Published var hasBiometricAccess: Bool = false
         @Published var showTokenExpiredAlert: Bool = false

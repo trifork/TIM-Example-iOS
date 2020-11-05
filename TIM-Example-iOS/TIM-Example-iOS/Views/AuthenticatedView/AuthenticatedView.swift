@@ -1,11 +1,11 @@
 import SwiftUI
 import Combine
 import LocalAuthentication
-import TIM
 
 struct AuthenticatedView: View {
     @EnvironmentObject var navigationViewRoot: NavigationViewRoot
     @ObservedObject var viewModel: ViewModel
+
 
     var body: some View {
         Form {
@@ -30,10 +30,8 @@ struct AuthenticatedView: View {
                                 viewModel: BiometricLoginSettingView.ViewModel(
                                     userId: .constant(viewModel.userId),
                                     password: nil,
-                                    didFinishBiometricHandling: { _ in
-                                        viewModel.presentBiometricSetting = false
-                                        viewModel.updateBioMetricAccessState()
-                                    })
+                                    didFinishBiometricSetting: $viewModel.presentBiometricSetting
+                                )
                             )
                         })
                     }
@@ -74,6 +72,11 @@ struct AuthenticatedView: View {
         .onAppear(perform: {
             viewModel.updateBioMetricAccessState()
             viewModel.beginExpirationTimer()
+        })
+        .onReceive(viewModel.$presentBiometricSetting, perform: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+                viewModel.updateBioMetricAccessState()
+            }
         })
     }
 }

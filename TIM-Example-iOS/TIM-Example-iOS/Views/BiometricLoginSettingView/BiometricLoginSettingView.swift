@@ -5,6 +5,7 @@ import LocalAuthentication
 
 struct BiometricLoginSettingView: View {
     @ObservedObject var viewModel: BiometricLoginSettingView.ViewModel
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
@@ -26,7 +27,7 @@ struct BiometricLoginSettingView: View {
                     }
                     Section {
                         Button("I don't want to enable biometric login") {
-                            viewModel.didFinishBiometricHandling(false)
+                            viewModel.dismissView()
                         }
                         .padding([.top, .bottom])
                     }
@@ -35,13 +36,18 @@ struct BiometricLoginSettingView: View {
                         Text("Your device does not support FaceID or TouchID.")
                             .padding([.top, .bottom])
                         Button("Alright, let's close this.") {
-                            viewModel.didFinishBiometricHandling(false)
+                            viewModel.dismissView()
                         }
                         .padding([.top, .bottom])
                     }
                 }
             }
             .navigationTitle("Biometric login")
+            .onReceive(viewModel.$shouldDismiss, perform: { shouldDismiss in
+                if shouldDismiss {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            })
         }
     }
 
@@ -58,7 +64,7 @@ struct BiometricLoginSetting_Previews: PreviewProvider {
             viewModel: BiometricLoginSettingView.ViewModel(
                 userId: .constant("<userID>"),
                 password: nil,
-                didFinishBiometricHandling: { _ in }
+                didFinishBiometricSetting: .constant(false)
             )
         )
     }

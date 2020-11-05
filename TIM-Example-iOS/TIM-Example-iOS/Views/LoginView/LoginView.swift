@@ -3,7 +3,7 @@ import TIM
 import LocalAuthentication
 
 struct LoginView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: LoginView.ViewModel
     
     var body: some View {

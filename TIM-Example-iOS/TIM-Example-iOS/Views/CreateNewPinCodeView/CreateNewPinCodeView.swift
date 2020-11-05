@@ -40,12 +40,14 @@ struct CreateNewPinCodeView: View {
                             set: { v in $viewModel.userId.wrappedValue = v}
                         ),
                         password: viewModel.pinCode,
-                        didFinishBiometricHandling: { _ in
-                            self.viewModel.presentLogin = false
-                            self.navigationViewRoot.popToRoot = true
-                        }
+                        didFinishBiometricSetting: $viewModel.isDone
                     )
                 )
+            })
+            .onReceive(viewModel.$isDone, perform: { isDone in
+                if isDone {
+                    navigationViewRoot.popToRoot = true
+                }
             })
         .navigationTitle("New user")
     }

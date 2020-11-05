@@ -11,6 +11,7 @@ extension CreateNewPinCodeView {
         @Published var pinCode: String = ""
         @Published var name: String = ""
         @Published var userId: String?
+        @Published var isDone: Bool = false
 
         init() {
             self.userId = TIM.auth.refreshToken?.userId
@@ -35,8 +36,8 @@ extension CreateNewPinCodeView {
                     case .finished:
                         break
                     }
-                } receiveValue: { (keyId) in
-                    print("Saved refresh token for keyId: \(keyId)")
+                } receiveValue: { (creationResult) in
+                    print("Saved refresh token for keyId: \(creationResult.keyId)")
                     self.presentLogin = self.userId?.isEmpty == false
                 }
                 .store(in: &futureStore)

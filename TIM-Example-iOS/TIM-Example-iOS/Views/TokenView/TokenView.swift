@@ -26,7 +26,7 @@ struct TokenView: View {
                     .bold()
                     .foregroundColor(.red)
             } else if let token = viewModel.token {
-                Section {
+                Section(header: Text("Export")) {
                     Button("Print to console") {
                         print("------BEGIN \(viewModel.tokenType.title) BEGIN------")
                         print(token)
@@ -38,7 +38,10 @@ struct TokenView: View {
                         }
                     }
                 }
-                Section {
+                Section(header: Text("Expiration")) {
+                    Text("\(viewModel.tokenExpireText ?? "N/A")")
+                }
+                Section(header: Text("Token")) {
                     Text(viewModel.token ?? "N/A")
                 }
             } else {

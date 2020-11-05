@@ -5,11 +5,8 @@ import TIM
 
 struct AuthenticatedView: View {
     @EnvironmentObject var navigationViewRoot: NavigationViewRoot
-    @ObservedObject var biometricAccessOberserver = BiometricAccessObserver()
+    @ObservedObject var viewModel: ViewModel
 
-    @State private var presentBiometricSetting: Bool = false
-
-    let userId: String
     var body: some View {
         Form {
             Section {
@@ -21,22 +18,21 @@ struct AuthenticatedView: View {
             }
             Section(header: Text("Biometric settings")) {
                 if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-                    if biometricAccessOberserver.hasBiometricAccess {
+                    if viewModel.hasBiometricAccess {
                         Button("Disable \(LAContext().biometryType.biometricIdName) for this user") {
-                            TIM.storage.disableBiometricAccessForRefreshToken(userId: userId)
-                            biometricAccessOberserver.update(userId: userId)
+                            viewModel.disableBiometricsForUser()
                         }
                     } else {
                         Button("Enable \(LAContext().biometryType.biometricIdName) for this user") {
-                            presentBiometricSetting = true
-                        }.sheet(isPresented: $presentBiometricSetting, content: {
+                            viewModel.presentBiometricSetting = true
+                        }.sheet(isPresented: $viewModel.presentBiometricSetting, content: {
                             BiometricLoginSettingView(
                                 viewModel: BiometricLoginSettingView.ViewModel(
-                                    userId: .constant(userId),
+                                    userId: .constant(viewModel.userId),
                                     password: nil,
                                     didFinishBiometricHandling: { _ in
-                                        presentBiometricSetting = false
-                                        biometricAccessOberserver.update(userId: userId)
+                                        viewModel.presentBiometricSetting = false
+                                        viewModel.updateBioMetricAccessState()
                                     })
                             )
                         })
@@ -50,47 +46,40 @@ struct AuthenticatedView: View {
                     Text("UserId")
                         .bold()
                     Spacer()
-                    Text(userId)
+                    Text(viewModel.userId)
                 }
             }
             Section(header: Text("Exit")) {
                 Button("🚪 Log out") {
-                    TIM.auth.logout()
+                    viewModel.logout()
                     navigationViewRoot.popToRoot = true
                 }
                 Button("❗ Delete user from this device") {
-                    TIM.auth.logout()
-                    TIM.storage.clear(userId: userId)
-                    UserSettings.clear(userId: userId)
+                    viewModel.deleteUser()
                     navigationViewRoot.popToRoot = true
                 }
             }
-            .navigationTitle("Hello \(UserSettings.name(userId: userId) ?? "Unknown")!")
+            .alert(isPresented: $viewModel.showTokenExpiredAlert, content: {
+                Alert(
+                    title: Text("Your access token has expired!"),
+                    message: Text("You will be logged out."),
+                    dismissButton: .default(Text("OK")) {
+                        navigationViewRoot.popToRoot = true
+                    }
+                )
+            })
+            .navigationTitle("Hello \(UserSettings.name(userId: viewModel.userId) ?? "Unknown")!")
             .navigationBarBackButtonHidden(true)
         }
         .onAppear(perform: {
-            biometricAccessOberserver.update(userId: userId)
+            viewModel.updateBioMetricAccessState()
+            viewModel.beginExpirationTimer()
         })
-    }
-}
-
-class BiometricAccessObserver: ObservableObject {
-
-    let objectWillChange = PassthroughSubject<BiometricAccessObserver,Never>()
-
-    var hasBiometricAccess: Bool = false {
-        didSet {
-            objectWillChange.send(self)
-        }
-    }
-
-    func update(userId: String) {
-        hasBiometricAccess = TIM.storage.hasBiometricAccessForRefreshToken(userId: userId)
     }
 }
 
 struct AuthenticatedView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticatedView(biometricAccessOberserver: BiometricAccessObserver(), userId: UUID().uuidString)
+        AuthenticatedView(viewModel: AuthenticatedView.ViewModel(userId: UUID().uuidString))
     }
 }

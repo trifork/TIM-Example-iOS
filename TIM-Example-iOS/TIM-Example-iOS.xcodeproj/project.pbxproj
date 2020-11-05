@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90223952553E411008F51F9 /* AuthenticatedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90223942553E411008F51F9 /* AuthenticatedViewModel.swift */; };
 		E90CF8D32547FE490087CDC0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8D22547FE490087CDC0 /* UserSettings.swift */; };
 		E90CF8D7254800BE0087CDC0 /* LABiometricType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */; };
 		E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90223942553E411008F51F9 /* AuthenticatedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewModel.swift; sourceTree = "<group>"; };
 		E90CF8D22547FE490087CDC0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		E90CF8D6254800BE0087CDC0 /* LABiometricType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LABiometricType+Extensions.swift"; sourceTree = "<group>"; };
 		E90CF8DD254818C50087CDC0 /* NavigationViewRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewRoot.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				E90CF8E225481CB40087CDC0 /* AuthenticatedView.swift */,
+				E90223942553E411008F51F9 /* AuthenticatedViewModel.swift */,
 			);
 			path = AuthenticatedView;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				E9E9F6B7253EC3E000612836 /* WelcomeView.swift in Sources */,
 				E90CF8DE254818C50087CDC0 /* NavigationViewRoot.swift in Sources */,
 				E9C09C7B254AC3E0005C3E97 /* BiometricLoginSettingViewModel.swift in Sources */,
+				E90223952553E411008F51F9 /* AuthenticatedViewModel.swift in Sources */,
 				E99F698E2547104C00DC6D51 /* CreateNewPinCodeView.swift in Sources */,
 				E9C09C78254AC174005C3E97 /* CreateNewPinCodeViewModel.swift in Sources */,
 				E96B86E1253F1051000E3CDA /* LoginView.swift in Sources */,

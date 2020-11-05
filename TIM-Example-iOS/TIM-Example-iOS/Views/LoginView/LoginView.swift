@@ -58,7 +58,7 @@ struct LoginView: View {
         })
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         NavigationLink(
-            destination: AuthenticatedView(userId: viewModel.userId),
+            destination: AuthenticatedView(viewModel: AuthenticatedView.ViewModel(userId: viewModel.userId)),
             isActive: $viewModel.showAuthenticatedView,
             label: {
                 EmptyView()

@@ -18,9 +18,23 @@ struct WelcomeView: View {
                                 .padding([.top, .bottom])
                         } else {
                             ForEach(Array(viewModel.availableUserIds), id: \.self) { (id) in
-                                NavigationLink(UserSettings.name(userId: id) ?? id, destination: LoginView(viewModel: LoginView.ViewModel(userId: id)))
-                                    .padding([.top, .bottom])
-                                    .foregroundColor(.blue)
+                                NavigationLink(
+                                    UserSettings.name(userId: id) ?? id,
+                                    destination: LoginView(
+                                        viewModel: LoginView.ViewModel(
+                                            userId: id
+                                        )
+                                    ),
+                                    isActive: Binding(
+                                        get: { self.viewModel.pushLogin && !self.navigationViewRoot.popToRoot },
+                                        set: { v in
+                                            self.viewModel.pushLogin = v
+                                            self.navigationViewRoot.popToRoot = false
+                                        }
+                                    )
+                                )
+                                .padding([.top, .bottom])
+                                .foregroundColor(.blue)
                             }
                         }
                     }

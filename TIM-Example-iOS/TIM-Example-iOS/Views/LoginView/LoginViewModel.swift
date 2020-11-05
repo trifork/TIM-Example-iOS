@@ -56,7 +56,7 @@ extension LoginView {
 
                 switch error {
                 case .storage(let storageError):
-                    wrongPin = storageError.isWrongPin()
+                    wrongPin = storageError.isWrongPassword()
                     keyInvalidated = storageError.isKeyLocked()
                 case .auth(let authError):
                     if case TIMAuthError.refreshTokenExpired = authError {

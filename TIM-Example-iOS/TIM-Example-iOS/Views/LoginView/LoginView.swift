@@ -3,7 +3,7 @@ import TIM
 import LocalAuthentication
 
 struct LoginView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var navigationViewRoot: NavigationViewRoot
     @ObservedObject var viewModel: LoginView.ViewModel
     
     var body: some View {
@@ -43,7 +43,7 @@ struct LoginView: View {
                 title: Text("Key invalid"),
                 message: Text("You have too many failed tries. The PIN has been invalidated. You have to register again."),
                 dismissButton: .default(Text("OK"), action: {
-                    presentationMode.wrappedValue.dismiss()
+                    navigationViewRoot.popToRoot = true
                 })
             )
         })
@@ -52,7 +52,7 @@ struct LoginView: View {
                 title: Text("Session expired"),
                 message: Text("Your refresh token has expired. You have to register again."),
                 dismissButton: .default(Text("OK"), action: {
-                    presentationMode.wrappedValue.dismiss()
+                    navigationViewRoot.popToRoot = true
                 })
             )
         })

@@ -12,7 +12,7 @@ extension WelcomeView {
         @Published var availableUserIds: [String] = []
         @Published var showLoginAlert: Bool = false
         @Published var pushCreateNewPin: Bool = false
-        @Published var pushLogin: Bool = false
+        @Published var pushLoginForUserId: String? = nil
 
         init() {
             update()

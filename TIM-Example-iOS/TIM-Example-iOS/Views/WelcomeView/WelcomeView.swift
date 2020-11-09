@@ -25,13 +25,11 @@ struct WelcomeView: View {
                                             userId: id
                                         )
                                     ),
-                                    isActive: Binding(
-                                        get: { self.viewModel.pushLogin && !self.navigationViewRoot.popToRoot },
-                                        set: { v in
-                                            self.viewModel.pushLogin = v
-                                            self.navigationViewRoot.popToRoot = false
-                                        }
-                                    )
+                                    isActive: Binding(get: {
+                                        viewModel.pushLoginForUserId == id
+                                    }, set: { isActive in
+                                        viewModel.pushLoginForUserId = isActive ? id : nil
+                                    })
                                 )
                                 .padding([.top, .bottom])
                                 .foregroundColor(.blue)
@@ -57,13 +55,8 @@ struct WelcomeView: View {
                 }
                 NavigationLink(
                     destination: CreateNewPinCodeView(),
-                    isActive: Binding(
-                        get: { self.viewModel.pushCreateNewPin && !self.navigationViewRoot.popToRoot },
-                        set: { v in
-                            self.viewModel.pushCreateNewPin = v
-                            self.navigationViewRoot.popToRoot = false
-                        }
-                    )) {
+                    isActive: $viewModel.pushCreateNewPin
+                ) {
                     EmptyView()
                 }
                 .hidden()
@@ -71,6 +64,12 @@ struct WelcomeView: View {
             .navigationBarTitle("TIM Example")
             .onAppear(perform: {
                 viewModel.update()
+            })
+            .onReceive(navigationViewRoot.$popToRoot, perform: { popToRoot in
+                if popToRoot {
+                    viewModel.pushCreateNewPin = false
+                    viewModel.pushLoginForUserId = nil
+                }
             })
             .multilineTextAlignment(.center)
         }

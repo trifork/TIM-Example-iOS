@@ -39,6 +39,7 @@ extension BiometricLoginSettingView {
         }
 
         func dismissView() {
+            didFinishBiometricSetting = true
             shouldDismiss = true
         }
 
@@ -46,7 +47,6 @@ extension BiometricLoginSettingView {
             switch result {
             case .finished:
                 print("Successfully enabled biometric login for user.")
-                didFinishBiometricSetting = true
                 dismissView()
             case .failure(let error):
                 print("Whoops, something went wrong: \(error.localizedDescription)")

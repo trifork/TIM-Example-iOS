@@ -35,10 +35,7 @@ struct CreateNewPinCodeView: View {
             .sheet(isPresented: $viewModel.presentLogin, content: {
                 BiometricLoginSettingView(
                     viewModel: BiometricLoginSettingView.ViewModel(
-                        userId: Binding(
-                            get: { $viewModel.userId.wrappedValue ?? "<missing userId>" },
-                            set: { v in $viewModel.userId.wrappedValue = v}
-                        ),
+                        userId: viewModel.userId ?? "<missing userId>",
                         password: viewModel.pinCode,
                         didFinishBiometricSetting: $viewModel.isDone
                     )

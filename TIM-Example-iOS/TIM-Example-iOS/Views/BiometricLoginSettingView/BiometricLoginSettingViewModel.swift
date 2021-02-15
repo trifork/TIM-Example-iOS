@@ -8,15 +8,13 @@ extension BiometricLoginSettingView {
     final class ViewModel: ObservableObject {
         private var futureStore: Set<AnyCancellable> = []
 
-
-        @Binding var userId: String
-
-        @Binding var didFinishBiometricSetting: Bool
+        let userId: String
         @Published var password: String?
+        @Binding var didFinishBiometricSetting: Bool
         @Published var shouldDismiss: Bool = false
 
-        init(userId: Binding<String>, password: String?, didFinishBiometricSetting: Binding<Bool>) {
-            self._userId = userId
+        init(userId: String, password: String?, didFinishBiometricSetting: Binding<Bool>) {
+            self.userId = userId
             self.password = password
             self._didFinishBiometricSetting = didFinishBiometricSetting
         }

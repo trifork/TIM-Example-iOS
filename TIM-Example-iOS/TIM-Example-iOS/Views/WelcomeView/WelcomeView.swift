@@ -26,7 +26,7 @@ struct WelcomeView: View {
                                         )
                                     ),
                                     isActive: Binding(get: {
-                                        viewModel.pushLoginForUserId == id
+                                        viewModel.pushLoginForUserId == id && !navigationViewRoot.popToRoot
                                     }, set: { isActive in
                                         viewModel.pushLoginForUserId = isActive ? id : nil
                                     })
@@ -69,14 +69,13 @@ struct WelcomeView: View {
                 if popToRoot {
                     viewModel.pushCreateNewPin = false
                     viewModel.pushLoginForUserId = nil
+                    navigationViewRoot.popToRoot = false // reset
                 }
             })
             .multilineTextAlignment(.center)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
-
-
-    
 }
 
 struct WelcomeView_Previews: PreviewProvider {

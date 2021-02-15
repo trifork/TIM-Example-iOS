@@ -62,7 +62,7 @@ struct BiometricLoginSetting_Previews: PreviewProvider {
     static var previews: some View {
         BiometricLoginSettingView(
             viewModel: BiometricLoginSettingView.ViewModel(
-                userId: .constant("<userID>"),
+                userId: "<userID>",
                 password: nil,
                 didFinishBiometricSetting: .constant(false)
             )

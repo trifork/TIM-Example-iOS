@@ -9,7 +9,7 @@ struct TIMExampleiOSApp: App {
     var body: some Scene {
         WindowGroup {
             WelcomeView()
-                .environmentObject(NavigationViewRoot())
+                .environmentObject(NavigationViewRoot.shared)
                 .onAppear(perform: {
                     let config = TIMConfiguration(
                         oidc: TIMOpenIDConfiguration(

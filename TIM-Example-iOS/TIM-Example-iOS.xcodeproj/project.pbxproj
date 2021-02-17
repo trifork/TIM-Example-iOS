@@ -504,8 +504,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/trifork/TIM-iOS.git";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.2;
+				branch = "tkc/upgrade-tim-encrypted-storage";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

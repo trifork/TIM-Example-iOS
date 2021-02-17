@@ -21,7 +21,8 @@ struct TIMExampleiOSApp: App {
                         keyService: TIMKeyServiceConfiguration(
                             realmBaseUrl: "https://oidc-test.hosted.trifork.com/auth/realms/dev",
                             version: .v1
-                        )
+                        ),
+                        encryptionMethod: .aesGcm
                     )
                     TIM.configure(configuration: config)
                 })

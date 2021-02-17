@@ -14,18 +14,18 @@
         "package": "TIM",
         "repositoryURL": "https://github.com/trifork/TIM-iOS.git",
         "state": {
-          "branch": null,
-          "revision": "69ea98718c633215794efdb7983910b1ac5f1b9a",
-          "version": "1.0.2"
+          "branch": "tkc/upgrade-tim-encrypted-storage",
+          "revision": "cdffa42cf92e028e5350db56f28c666f3eed6f73",
+          "version": null
         }
       },
       {
         "package": "TIMEncryptedStorage",
         "repositoryURL": "https://github.com/trifork/TIMEncryptedStorage-iOS",
         "state": {
-          "branch": null,
-          "revision": "2351c8696f03c2df64e76162bad13fc63969becf",
-          "version": "1.0.0"
+          "branch": "tkc/gcm-and-iv-security-issue",
+          "revision": "f4bd5b999190d549e3a8419dc5f4881d1e79770e",
+          "version": null
         }
       }
     ]

@@ -38,24 +38,40 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
             }
         }
-        .alert(isPresented: $viewModel.keyInvalidated, content: {
-            Alert(
-                title: Text("Key invalid"),
-                message: Text("You have too many failed tries. The PIN has been invalidated. You have to register again."),
-                dismissButton: .default(Text("OK"), action: {
-                    navigationViewRoot.popToRoot = true
+        .background(
+            EmptyView()
+                .alert(isPresented: $viewModel.keyInvalidated, content: {
+                    Alert(
+                        title: Text("Key invalid"),
+                        message: Text("You have too many failed tries. The PIN has been invalidated. You have to register again."),
+                        dismissButton: .default(Text("OK"), action: {
+                            navigationViewRoot.popToRoot = true
+                        })
+                    )
                 })
-            )
-        })
-        .alert(isPresented: $viewModel.sessionExpired, content: {
-            Alert(
-                title: Text("Session expired"),
-                message: Text("Your refresh token has expired. You have to register again."),
-                dismissButton: .default(Text("OK"), action: {
-                    navigationViewRoot.popToRoot = true
+        )
+        .background(
+            EmptyView()
+                .alert(isPresented: $viewModel.sessionExpired, content: {
+                    Alert(
+                        title: Text("Session expired"),
+                        message: Text("Your refresh token has expired. You have to register again."),
+                        dismissButton: .default(Text("OK"), action: {
+                            navigationViewRoot.popToRoot = true
+                        })
+                    )
                 })
-            )
-        })
+        )
+        .background(
+            EmptyView()
+                .alert(isPresented: $viewModel.keyServiceFailed, content: {
+                    Alert(
+                        title: Text("Failed to communicate with KeyService"),
+                        message: Text("Something went wrong while trying to contact key service. Please check your internet connection and try again."),
+                        dismissButton: .default(Text("OK"), action: { })
+                    )
+                })
+        )
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         .sheet(
             isPresented: $viewModel.showAuthenticatedView, content: {

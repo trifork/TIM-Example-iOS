@@ -4,8 +4,8 @@ import LocalAuthentication
 
 struct AuthenticatedView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var navigationViewRoot: NavigationViewRoot
     @ObservedObject var viewModel: ViewModel
+    @Binding var resetNavigation: Bool
 
     var body: some View {
         NavigationView {
@@ -52,12 +52,12 @@ struct AuthenticatedView: View {
                     Button("🚪 Log out") {
                         viewModel.logout()
                         presentationMode.wrappedValue.dismiss()
-                        navigationViewRoot.popToRoot = true
+                        resetNavigation = true
                     }
                     Button("❗ Delete user from this device") {
                         viewModel.deleteUser()
                         presentationMode.wrappedValue.dismiss()
-                        navigationViewRoot.popToRoot = true
+                        resetNavigation = true
                     }
                 }
             }
@@ -67,7 +67,7 @@ struct AuthenticatedView: View {
                     message: Text("You will be logged out."),
                     dismissButton: .default(Text("OK")) {
                         presentationMode.wrappedValue.dismiss()
-                        navigationViewRoot.popToRoot = true
+                        resetNavigation = true
                     }
                 )
             })
@@ -87,6 +87,6 @@ struct AuthenticatedView: View {
 
 struct AuthenticatedView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticatedView(viewModel: AuthenticatedView.ViewModel(userId: UUID().uuidString))
+        AuthenticatedView(viewModel: AuthenticatedView.ViewModel(userId: UUID().uuidString), resetNavigation: .constant(false))
     }
 }

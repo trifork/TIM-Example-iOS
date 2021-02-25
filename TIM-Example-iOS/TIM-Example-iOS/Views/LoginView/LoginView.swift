@@ -1,10 +1,12 @@
 import SwiftUI
 import TIM
 import LocalAuthentication
+import Combine
 
 struct LoginView: View {
-    @EnvironmentObject var navigationViewRoot: NavigationViewRoot
     @ObservedObject var viewModel: LoginView.ViewModel
+    @State var popToRoot: Bool = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         Form {
@@ -45,7 +47,7 @@ struct LoginView: View {
                         title: Text("Key invalid"),
                         message: Text("You have too many failed tries. The PIN has been invalidated. You have to register again."),
                         dismissButton: .default(Text("OK"), action: {
-                            navigationViewRoot.popToRoot = true
+                            popToRoot = true
                         })
                     )
                 })
@@ -57,7 +59,7 @@ struct LoginView: View {
                         title: Text("Session expired"),
                         message: Text("Your refresh token has expired. You have to register again."),
                         dismissButton: .default(Text("OK"), action: {
-                            navigationViewRoot.popToRoot = true
+                            popToRoot = true
                         })
                     )
                 })
@@ -78,8 +80,14 @@ struct LoginView: View {
                 AuthenticatedView(
                     viewModel: AuthenticatedView.ViewModel(
                         userId: viewModel.userId
-                    )
+                    ),
+                    resetNavigation: $popToRoot
                 )
+        })
+        .onReceive(Just(popToRoot), perform: { popToRoot in
+            if popToRoot {
+                presentationMode.wrappedValue.dismiss()
+            }
         })
     }
 }

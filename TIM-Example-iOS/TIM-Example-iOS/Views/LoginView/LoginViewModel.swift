@@ -57,7 +57,7 @@ extension LoginView {
 
                 switch error {
                 case .storage(let storageError):
-                    wrongPin = storageError.isWrongPassword()
+                    wrongPin = storageError.isWrongPassword() || storageError.isBiometricFailedError()
                     keyInvalidated = storageError.isKeyLocked()
                     if !wrongPin && !keyInvalidated {
                         keyServiceFailed = storageError.isKeyServiceError()

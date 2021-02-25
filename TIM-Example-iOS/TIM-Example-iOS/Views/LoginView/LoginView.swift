@@ -73,7 +73,7 @@ struct LoginView: View {
                 })
         )
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
-        .sheet(
+        .fullScreenCover(
             isPresented: $viewModel.showAuthenticatedView, content: {
                 AuthenticatedView(
                     viewModel: AuthenticatedView.ViewModel(

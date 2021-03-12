@@ -1,5 +1,5 @@
 # Trifork Identity Manager iOS Example
 
-## 🚧  WORK IN PROGRESS 🚧
+This project shows a SwiftUI example of how to use TIM-iOS.
 
-Under development... A better README will come soon.
+Find more documentation on the two Trifork Identity Manager repository: [TIM-iOS](https://github.com/trifork/TIM-iOS)

@@ -36,7 +36,12 @@ extension WelcomeView {
                 .sink { (completion) in
                     switch completion {
                     case .failure(let error):
-                        self.showLoginAlert = true
+                        switch error {
+                        case .auth(let error) where error.isSafariViewControllerCancelled():
+                            break //Silent fail
+                        default:
+                            self.showLoginAlert = true
+                        }
                         print("Failed.\n\(error.localizedDescription)")
                     case .finished:
                         break

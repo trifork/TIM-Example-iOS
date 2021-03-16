@@ -21,10 +21,10 @@ struct CreateNewPinCodeView: View {
                 }
                 Section {
                     Button("Save") {
-                        guard let rt = TIM.auth.refreshToken, let userId = rt.userId else {
+                        guard let rt = TIM.auth.refreshToken else {
                             return
                         }
-                        self.viewModel.userId = userId
+                        self.viewModel.userId = rt.userId
                         viewModel.storeRefreshToken(refreshToken: rt)
                     }
                     .disabled(viewModel.userId != nil && (viewModel.pinCode.count < 4 || viewModel.name.isEmpty))

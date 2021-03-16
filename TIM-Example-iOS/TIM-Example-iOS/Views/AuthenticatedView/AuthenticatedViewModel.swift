@@ -30,11 +30,10 @@ extension AuthenticatedView {
                 .sink(
                     receiveCompletion: { _ in },
                     receiveValue: { [weak self] (at) in
-                        guard let accessTokenExpire = at.expireTimestamp else {
+                        guard let expireDate = at.expireDate else {
                             return
                         }
-                        let accessTokenTime: Date = Date(timeIntervalSince1970: accessTokenExpire)
-                        let timer = Timer(fire: accessTokenTime, interval: 0, repeats: false) { [weak self] (timer) in
+                        let timer = Timer(fire: expireDate, interval: 0, repeats: false) { [weak self] (timer) in
                             self?.showTokenExpiredAlert = true
                             self?.logout()
                             self?.hasStartedTimers = false

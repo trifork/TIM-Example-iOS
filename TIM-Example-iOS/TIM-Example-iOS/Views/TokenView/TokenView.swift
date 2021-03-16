@@ -34,7 +34,7 @@ struct TokenView: View {
                     }
                     Button("Copy to clipboard") {
                         if let token = viewModel.token {
-                            UIPasteboard.general.string = token
+                            UIPasteboard.general.string = token.token
                         }
                     }
                 }
@@ -42,7 +42,7 @@ struct TokenView: View {
                     Text("\(viewModel.tokenExpireText ?? "N/A")")
                 }
                 Section(header: Text("Token")) {
-                    Text(viewModel.token ?? "N/A")
+                    Text(viewModel.token?.token ?? "N/A")
                 }
             } else {
                 Text("Loading ...")

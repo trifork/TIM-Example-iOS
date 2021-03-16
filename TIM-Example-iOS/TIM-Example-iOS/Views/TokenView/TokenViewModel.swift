@@ -31,12 +31,11 @@ extension TokenView {
                     }
                 } receiveValue: { (token) in
                     self.token = token
-                    if let expireTimestamp = token.expireTimestamp {
-                        let date = Date(timeIntervalSince1970: expireTimestamp)
+                    if let expireDate = token.expireDate {
                         let df = DateFormatter()
                         df.dateStyle = .medium
                         df.timeStyle = .medium
-                        self.tokenExpireText = df.string(from: date)
+                        self.tokenExpireText = df.string(from: expireDate)
                     }
                 }
                 .store(in: &futureStore)

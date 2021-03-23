@@ -14,10 +14,6 @@ extension WelcomeView {
         @Published var pushCreateNewPin: Bool = false
         @Published var pushLoginForUserId: String? = nil
 
-        init() {
-            update()
-        }
-
         func update() {
             availableUserIds = Array(TIM.storage.availableUserIds)
         }

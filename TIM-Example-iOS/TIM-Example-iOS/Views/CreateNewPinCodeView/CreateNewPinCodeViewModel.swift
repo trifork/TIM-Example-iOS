@@ -13,10 +13,10 @@ extension CreateNewPinCodeView {
         @Published var userId: String?
         @Published var isDone: Bool = false
 
-        init() {
+        func update() {
             self.userId = TIM.auth.refreshToken?.userId
 
-            // Prefill user name field, if the user already has logged in before.
+            // Pre-fill user name field, if the user already has logged in before.
             if let userId = self.userId {
                 self.name = UserSettings.name(userId: userId)  ?? ""
             }

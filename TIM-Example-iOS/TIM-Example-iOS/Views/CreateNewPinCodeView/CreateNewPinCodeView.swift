@@ -46,6 +46,7 @@ struct CreateNewPinCodeView: View {
                     navigationViewRoot.popToRoot = true
                 }
             })
+            .onAppear(perform: viewModel.update)
         .navigationTitle("New user")
     }
 }

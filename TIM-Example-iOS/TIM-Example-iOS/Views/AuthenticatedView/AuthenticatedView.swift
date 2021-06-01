@@ -51,12 +51,10 @@ struct AuthenticatedView: View {
                 Section(header: Text("Exit")) {
                     Button("🚪 Log out") {
                         viewModel.logout()
-                        presentationMode.wrappedValue.dismiss()
                         resetNavigation = true
                     }
                     Button("❗ Delete user from this device") {
                         viewModel.deleteUser()
-                        presentationMode.wrappedValue.dismiss()
                         resetNavigation = true
                     }
                 }
@@ -66,7 +64,6 @@ struct AuthenticatedView: View {
                     title: Text("Your access token has expired!"),
                     message: Text("You will be logged out."),
                     dismissButton: .default(Text("OK")) {
-                        presentationMode.wrappedValue.dismiss()
                         resetNavigation = true
                     }
                 )
@@ -82,6 +79,11 @@ struct AuthenticatedView: View {
                 }
             })
         }
+        .onReceive(Just(resetNavigation), perform: { reset in
+            if reset {
+                presentationMode.wrappedValue.dismiss()
+            }
+        })
     }
 }
 

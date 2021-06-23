@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/trifork/TIM-iOS.git",
         "state": {
           "branch": null,
-          "revision": "90101e5cf7d82858c742322b0d9bc1c0e113beeb",
-          "version": "2.1.0"
+          "revision": "fbaccf94a4024646ef66cb2de83997bf7cb15758",
+          "version": "2.2.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/trifork/TIMEncryptedStorage-iOS",
         "state": {
           "branch": null,
-          "revision": "4668dd4f067b9d82a4ee6b27bca8165b071fe7bc",
-          "version": "2.0.0"
+          "revision": "246c0cf65a6335b871bed972ea14225a11c1f0c3",
+          "version": "2.1.0"
         }
       }
     ]

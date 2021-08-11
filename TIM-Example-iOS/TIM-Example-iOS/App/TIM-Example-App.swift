@@ -18,7 +18,7 @@ struct TIMExampleiOSApp: App {
                         let config = TIMConfiguration(
                             oidc: TIMOpenIDConfiguration(
                                 issuer: URL(string: "https://oidc-test.hosted.trifork.com/auth/realms/dev")!,
-                                clientId: "test",
+                                clientId: "test_mock",
                                 redirectUri: URL(string: "test:/")!,
                                 scopes: [OIDScopeOpenID, OIDScopeProfile]
                             ),

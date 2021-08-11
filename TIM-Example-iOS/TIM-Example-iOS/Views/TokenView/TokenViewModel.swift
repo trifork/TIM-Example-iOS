@@ -19,6 +19,15 @@ extension TokenView {
 
         func loadToken() {
             isLoading = true
+            switch tokenType {
+            case .accessToken:
+                loadAccessToken()
+            case .refreshToken:
+                loadRefreshToken()
+            }
+        }
+
+        private func loadAccessToken() {
             TIM.auth.accessToken()
                 .sink { (result) in
                     switch result {
@@ -31,14 +40,26 @@ extension TokenView {
                     }
                 } receiveValue: { (token) in
                     self.token = token
-                    if let expireDate = token.expireDate {
-                        let df = DateFormatter()
-                        df.dateStyle = .medium
-                        df.timeStyle = .medium
-                        self.tokenExpireText = df.string(from: expireDate)
-                    }
+                    self.setAndFormatExpireDate(date: token.expireDate)
                 }
                 .store(in: &futureStore)
         }
+
+        private func loadRefreshToken() {
+            self.token = TIM.auth.refreshToken
+            setAndFormatExpireDate(date: TIM.auth.refreshToken?.expireDate)
+        }
+
+        private func setAndFormatExpireDate(date: Date?) {
+            if let expireDate = date, (date?.timeIntervalSince1970 ?? 0) > 0 {
+                let df = DateFormatter()
+                df.dateStyle = .medium
+                df.timeStyle = .medium
+                self.tokenExpireText = df.string(from: expireDate)
+            } else {
+                self.tokenExpireText = "Unknown (handled server-side)"
+            }
+        }
     }
+
 }

@@ -16,16 +16,11 @@ struct TIMExampleiOSApp: App {
                 .onAppear(perform: {
                     if !TIM.isConfigured {
                         let config = TIMConfiguration(
-                            oidc: TIMOpenIDConfiguration(
-                                issuer: URL(string: "https://oidc-test.hosted.trifork.com/auth/realms/dev")!,
-                                clientId: "test_mock",
-                                redirectUri: URL(string: "test:/")!,
-                                scopes: [OIDScopeOpenID, OIDScopeProfile]
-                            ),
-                            keyService: TIMKeyServiceConfiguration(
-                                realmBaseUrl: "https://oidc-test.hosted.trifork.com/auth/realms/dev",
-                                version: .v1
-                            ),
+                            timBaseUrl: URL(string: "https://oidc-test.hosted.trifork.com")!,
+                            realm: "dev",
+                            clientId: "test_mock",
+                            redirectUri: URL(string: "test:/")!,
+                            scopes: [OIDScopeOpenID, OIDScopeProfile],
                             encryptionMethod: .aesGcm
                         )
                         TIM.configure(configuration: config)

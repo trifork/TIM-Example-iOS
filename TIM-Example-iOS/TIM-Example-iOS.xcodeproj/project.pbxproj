@@ -501,7 +501,7 @@
 			repositoryURL = "https://github.com/trifork/TIM-iOS.git";
 			requirement = {
 				kind = exactVersion;
-				version = 2.2.2;
+				version = 2.2.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -16,6 +16,7 @@ extension LoginView {
         @Published var keyInvalidated: Bool = false
         @Published var sessionExpired: Bool = false
         @Published var keyServiceFailed: Bool = false
+        @Published var clientTimeIsOff: Bool = false
         @Published var error: TIMError?
         @Published var isLoading: Bool = false
 
@@ -63,8 +64,12 @@ extension LoginView {
                         keyServiceFailed = storageError.isKeyServiceError()
                     }
                 case .auth(let authError):
-                    if case TIMAuthError.refreshTokenExpired = authError {
+                    switch authError {
+                    case .refreshTokenExpired:
                         sessionExpired = true
+                    case .failedToValidateIDToken:
+                        clientTimeIsOff = true
+                    default: break // do default error handling.
                     }
                 }
             case .finished:

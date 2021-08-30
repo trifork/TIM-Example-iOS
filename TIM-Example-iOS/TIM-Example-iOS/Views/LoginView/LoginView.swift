@@ -74,6 +74,16 @@ struct LoginView: View {
                     )
                 })
         )
+        .background(
+            EmptyView()
+                .alert(isPresented: $viewModel.clientTimeIsOff, content: {
+                    Alert(
+                        title: Text("IDToken error!"),
+                        message: Text("This typically indicate, that the client's time is more than 10 minutes off the real time. Check your device's time and try again."),
+                        dismissButton: .default(Text("OK"), action: { })
+                    )
+                })
+        )
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         .fullScreenCover(
             isPresented: $viewModel.showAuthenticatedView, content: {

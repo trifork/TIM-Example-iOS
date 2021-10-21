@@ -84,6 +84,18 @@ struct LoginView: View {
                     )
                 })
         )
+        .background(
+            EmptyView()
+                .alert(isPresented: $viewModel.invalidUserState, content: {
+                    Alert(
+                        title: Text("Invalid user state!"),
+                        message: Text("Unfortunately, the stored user data is in an invalid state, which cannot be recovered. A new OpenID Connect login will be required."),
+                        dismissButton: .default(Text("OK"), action: {
+                            popToRoot = true
+                        })
+                    )
+                })
+        )
         .navigationBarTitle(UserSettings.name(userId: viewModel.userId) ?? "Unknown")
         .fullScreenCover(
             isPresented: $viewModel.showAuthenticatedView, content: {

@@ -16,6 +16,7 @@ extension LoginView {
         @Published var keyInvalidated: Bool = false
         @Published var sessionExpired: Bool = false
         @Published var keyServiceFailed: Bool = false
+        @Published var invalidUserState: Bool = false
         @Published var clientTimeIsOff: Bool = false
         @Published var error: TIMError?
         @Published var isLoading: Bool = false
@@ -39,8 +40,12 @@ extension LoginView {
 
         func loginWithBio() {
             wrongPin = false
-            isLoading = true
-            TIM.auth.loginWithBiometricId(userId: userId, storeNewRefreshToken: true)
+            TIM.auth.loginWithBiometricId(
+                userId: userId,
+                storeNewRefreshToken: true,
+                willBeginNetworkRequests: { [weak self] in
+                    self?.isLoading = true
+                })
                 .sink(
                     receiveCompletion: handleResultCompletion,
                     receiveValue: { _ in
@@ -58,10 +63,16 @@ extension LoginView {
 
                 switch error {
                 case .storage(let storageError):
-                    wrongPin = storageError.isWrongPassword() || storageError.isBiometricFailedError()
-                    keyInvalidated = storageError.isKeyLocked()
-                    if !wrongPin && !keyInvalidated {
-                        keyServiceFailed = storageError.isKeyServiceError()
+
+                    switch storageError {
+                    case TIMStorageError.incompleteUserDataSet:
+                        invalidUserState = true
+                    case TIMStorageError.encryptedStorageFailed:
+                        wrongPin = storageError.isWrongPassword() || storageError.isBiometricFailedError()
+                        keyInvalidated = storageError.isKeyLocked()
+                        if !wrongPin && !keyInvalidated {
+                            keyServiceFailed = storageError.isKeyServiceError()
+                        }
                     }
                 case .auth(let authError):
                     switch authError {

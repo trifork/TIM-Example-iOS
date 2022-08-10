@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AppAuth",
-        "repositoryURL": "https://github.com/openid/AppAuth-iOS",
-        "state": {
-          "branch": null,
-          "revision": "01131d68346c8ae552961c768d583c715fbe1410",
-          "version": "1.4.0"
-        }
-      },
-      {
-        "package": "TIM",
-        "repositoryURL": "https://github.com/trifork/TIM-iOS.git",
-        "state": {
-          "branch": null,
-          "revision": "ef14911b00352b44d2a078d0e9640b7d17fe9bc6",
-          "version": "2.3.0"
-        }
-      },
-      {
-        "package": "TIMEncryptedStorage",
-        "repositoryURL": "https://github.com/trifork/TIMEncryptedStorage-iOS",
-        "state": {
-          "branch": null,
-          "revision": "4502fb1469c44990197a2138dfcf9ee13beed651",
-          "version": "2.2.0"
-        }
+  "pins" : [
+    {
+      "identity" : "appauth-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/openid/AppAuth-iOS",
+      "state" : {
+        "revision" : "01131d68346c8ae552961c768d583c715fbe1410",
+        "version" : "1.4.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "tim-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/trifork/TIM-iOS.git",
+      "state" : {
+        "revision" : "a5a1483dd9374b818531703db7d19e0a706e5f12",
+        "version" : "2.7.1"
+      }
+    },
+    {
+      "identity" : "timencryptedstorage-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/trifork/TIMEncryptedStorage-iOS",
+      "state" : {
+        "revision" : "466d9a9f0eba1555b0a27034f5a3b5aee837c404",
+        "version" : "2.2.1"
+      }
+    }
+  ],
+  "version" : 2
 }
